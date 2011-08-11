@@ -1,0 +1,115 @@
+
+vtabletest:     file format elf32-i386
+
+SYMBOL TABLE:
+080480f4 l    d  .interp	00000000              
+08048108 l    d  .note.ABI-tag	00000000              
+08048128 l    d  .hash	00000000              
+08048150 l    d  .dynsym	00000000              
+080481a0 l    d  .dynstr	00000000              
+080481ec l    d  .gnu.version	00000000              
+080481f8 l    d  .gnu.version_r	00000000              
+08048218 l    d  .rel.dyn	00000000              
+08048220 l    d  .rel.plt	00000000              
+08048230 l    d  .init	00000000              
+08048248 l    d  .plt	00000000              
+08048278 l    d  .text	00000000              
+0804840c l    d  .fini	00000000              
+08048428 l    d  .rodata	00000000              
+08048444 l    d  .eh_frame	00000000              
+08049448 l    d  .data	00000000              
+08049454 l    d  .dynamic	00000000              
+0804951c l    d  .ctors	00000000              
+08049524 l    d  .dtors	00000000              
+0804952c l    d  .jcr	00000000              
+08049530 l    d  .got	00000000              
+08049548 l    d  .bss	00000000              
+00000000 l    d  .comment	00000000              
+00000000 l    d  .debug_aranges	00000000              
+00000000 l    d  .debug_pubnames	00000000              
+00000000 l    d  .debug_info	00000000              
+00000000 l    d  .debug_abbrev	00000000              
+00000000 l    d  .debug_line	00000000              
+00000000 l    d  .debug_frame	00000000              
+00000000 l    d  .debug_str	00000000              
+00000000 l    d  *ABS*	00000000              
+00000000 l    d  *ABS*	00000000              
+00000000 l    d  *ABS*	00000000              
+00000000 l    df *ABS*	00000000              <command line>
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/config.h
+00000000 l    df *ABS*	00000000              <command line>
+00000000 l    df *ABS*	00000000              <built-in>
+00000000 l    df *ABS*	00000000              abi-note.S
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/abi-tag.h
+00000000 l    df *ABS*	00000000              abi-note.S
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/config.h
+00000000 l    df *ABS*	00000000              abi-note.S
+00000000 l    df *ABS*	00000000              <command line>
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/config.h
+00000000 l    df *ABS*	00000000              <command line>
+00000000 l    df *ABS*	00000000              <built-in>
+00000000 l    df *ABS*	00000000              abi-note.S
+00000000 l    df *ABS*	00000000              init.c
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/crti.S
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/defs.h
+00000000 l    df *ABS*	00000000              initfini.c
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/crti.S
+00000000 l    df *ABS*	00000000              <command line>
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/config.h
+00000000 l    df *ABS*	00000000              <command line>
+00000000 l    df *ABS*	00000000              <built-in>
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/crti.S
+0804829c l     F .text	00000000              call_gmon_start
+00000000 l    df *ABS*	00000000              crtstuff.c
+0804951c l     O .ctors	00000000              __CTOR_LIST__
+08049524 l     O .dtors	00000000              __DTOR_LIST__
+08048444 l     O .eh_frame	00000000              __EH_FRAME_BEGIN__
+0804952c l     O .jcr	00000000              __JCR_LIST__
+08049450 l     O .data	00000000              p.0
+08049548 l     O .bss	00000001              completed.1
+080482c0 l     F .text	00000000              __do_global_dtors_aux
+080482fc l     F .text	00000000              frame_dummy
+00000000 l    df *ABS*	00000000              crtstuff.c
+08049520 l     O .ctors	00000000              __CTOR_END__
+08049528 l     O .dtors	00000000              __DTOR_END__
+08048444 l     O .eh_frame	00000000              __FRAME_END__
+0804952c l     O .jcr	00000000              __JCR_END__
+080483e8 l     F .text	00000000              __do_global_ctors_aux
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/crtn.S
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/defs.h
+00000000 l    df *ABS*	00000000              initfini.c
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/crtn.S
+00000000 l    df *ABS*	00000000              <command line>
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/config.h
+00000000 l    df *ABS*	00000000              <command line>
+00000000 l    df *ABS*	00000000              <built-in>
+00000000 l    df *ABS*	00000000              /usr/src/build/231499-i386/BUILD/glibc-2.3.2-20030313/build-i386-linux/csu/crtn.S
+00000000 l    df *ABS*	00000000              vtabletest.c
+08049454 g     O .dynamic	00000000              _DYNAMIC
+08048428 g     O .rodata	00000004              _fp_hw
+08048328 g     F .text	0000000b              Add
+08049448 g       *ABS*	00000000              __fini_array_end
+0804944c g     O .data	00000000              .hidden __dso_handle
+080483b4 g     F .text	00000034              __libc_csu_fini
+08048230 g     F .init	00000000              _init
+08048278 g     F .text	00000000              _start
+08048333 g     F .text	0000000d              Sub
+08049448 g       *ABS*	00000000              __fini_array_start
+08048384 g     F .text	00000030              __libc_csu_init
+08049548 g       *ABS*	00000000              __bss_start
+08048340 g     F .text	00000042              main
+08048258       F *UND*	000000fb              __libc_start_main@@GLIBC_2.0
+08049448 g       *ABS*	00000000              __init_array_end
+08049448  w      .data	00000000              data_start
+08048268       F *UND*	00000039              printf@@GLIBC_2.0
+0804840c g     F .fini	00000000              _fini
+08049548 g       *ABS*	00000000              _edata
+08049530 g     O .got	00000000              _GLOBAL_OFFSET_TABLE_
+0804954c g       *ABS*	00000000              _end
+08049448 g       *ABS*	00000000              __init_array_start
+0804842c g     O .rodata	00000004              _IO_stdin_used
+08049448 g       .data	00000000              __data_start
+00000000  w      *UND*	00000000              _Jv_RegisterClasses
+00000000  w      *UND*	00000000              __gmon_start__
+
+
