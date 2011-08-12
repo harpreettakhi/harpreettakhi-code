@@ -1,0 +1,49 @@
+javac AWTEMICalc.java
+java AWTEMICalc
+javac AWTEMICalc.java
+java AWTEMICalc
+javac AWTEMICalc.java
+java AWTEMICalc
+javac AWTEMICalc.java
+java AWTEMICalc
+javac AWTEMICalc.java
+cls
+java AWTEMICalc
+notepad RunWebClass.java
+javac RunWebClass.java
+java RunWebClass http://prithvi/classes/ AWTHello
+java RunWebClass http://prithvi/classes/ AWTEMICalc
+javac RunWebClass.java
+java RunWebClass http://prithvi/classes/ AWTHello
+javac RunWebClass.java
+java RunWebClass http://prithvi/classes/ AWTHello
+javac AWTHello.java
+cls
+java AWTHello
+javac AWTHello.java
+java AWTHello
+javac AWTHello.java
+cls
+java AWTHello
+javac AWTHello.java
+java AWTHello
+javac AWTHello.java
+java AWTHello
+cls
+copy AWTHello.java AWTEMICalc.java
+notepad AWTEMICalc.java
+javac AWTEMICalc.java
+java AWTEMICalc
+javac AWTEMICalc.java
+cls
+java AWTEMICalc
+javac AWTEMICalc.java
+java AWTEMICalc
+javac AWTEMICalc.java
+cls
+javac AWTEMICalc.java
+java AWTEMICalc
+javac AWTEMICalc.java
+java AWTEMICalc
+javac AWTEMICalc.java
+java AWTEMICalc

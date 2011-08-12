@@ -1,0 +1,50 @@
+java BrokerClient buy 1001 SUNW 5
+copy BrokerMessageReceiver2.java BrokerMessageBrowser.java
+notepad BrokerMessageBrowser.java
+cls
+javac BrokerMessageBrowser.java
+copy BrokerMessageReceiver2.java BrokerMessageListener.java
+notepa BrokerMessageListener.java
+notepad BrokerMessageListener.java
+cls
+javac BrokerMessageListener.java
+javaw BrokerMessageListener
+java BrokerClient buy 1005 INTL 10
+java BrokerClient sell 1005 INTL 5
+notepad StockPricePublisher.java
+javac StockPricePublisher.java
+cls
+javac StockPricePublisher.java
+copy StockPricePublisher.java StockPriceSubscriber.java
+notepa StockPriceSubscriber.java
+notepad StockPriceSubscriber.java
+javac StockPriceSubscriber.java
+java StockPricePublisher MSFT 55.55
+java StockPricePublisher ORCL 75.65
+java StockPricePublisher
+notepad trading\StockPriceMDB.java
+javap javax.ejb.MessageDrivenBean
+javac trading\StockPriceMDB.java
+cls
+java CompanyClient list
+java StockPricePublisher SUNW 2.55
+java CompanyClient list
+cla
+cls
+javap javax.ejb.EJBContext
+javap javax.ejb.SessionContext
+doskey /h > cmdEJB-jms.txt
+cls
+doskey /h > cmdEJB-jms.txt
+java BrokerClient buy 1005 MSFT 50
+notepad BrokerMessageReceiver1.java
+javac BrokerMessageReceiver1.java
+java BrokerMessageReceiver1
+start
+java BrokerClient sell 1005 SUNW 25
+copy BrokerMessageReceiver1.java BrokerMessageReceiver2.java
+notepad BrokerMessageReceiver2.java
+javac BrokerMessageReceiver2.java
+cls
+java BrokerClient buy 1005 ORCL 10
+java BrokerClient buy 1003 ORCL 5

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE application PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application 1.2//EN" "http://java.sun.com/j2ee/dtds/application_1_2.dtd">
+<application>
+
+    <display-name>FBS-App</display-name>
+
+    <module>
+        <ejb>fbs-ejb</ejb>
+    </module>
+
+    <module>
+        <web>
+            <web-uri>fbs-web</web-uri>
+            <context-root>/fbs</context-root>
+        </web>
+    </module>
+
+    <security-role>
+        <role-name>administrators</role-name>
+    </security-role>
+    <security-role>
+        <role-name>users</role-name>
+    </security-role>
+
+</application>
+
+
+
+
+

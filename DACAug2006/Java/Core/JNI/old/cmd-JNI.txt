@@ -1,0 +1,50 @@
+notepad NativeConsole.h
+cls
+notepad natcon.cpp
+cl /LD natcon.cpp
+set include=%include%;c:\j2sdk1.4.2_06\include;c:\j2sdk1.4.2_06\include\win32
+cls
+cl /LD natcon.cpp
+cls
+dir *.dll
+cl /LD /MD natcon.cpp
+dir *.dll
+cls
+dir *.dll
+cl /LD natcon.cpp kernel32.lib /link /noentry
+cls
+dir *.dll
+notepad NativeConsoleTest.java
+javac NativeConsoleTest.java
+cls
+java NativeConsoleTest
+del natcon.dll
+java NativeConsoleTest
+cl /LD natcon.cpp kernel32.lib /link /noentry
+cls
+java NativeConsoleTest
+javac NativeConsoleTest.java
+java NativeConsoleTest
+ftp 192.168.1.68
+doskey /h > cmd-JNI.txt
+cls
+dlimplinktest.exe 24 36
+doskey /h > cmd-dllnew.txt
+cmd-dllnew.txt
+cls
+md JNI
+rd JNI
+cls
+cd ..
+cd Java\Core\
+cls
+dir
+md JNI
+cd JNI
+cls
+dir
+notepad NativeConsole.java
+javac NativeConsole.java
+dir
+javah NativeConsole
+edit NativeConsole.h

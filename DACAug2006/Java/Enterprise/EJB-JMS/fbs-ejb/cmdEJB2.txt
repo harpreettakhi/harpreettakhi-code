@@ -1,0 +1,50 @@
+java CompanyClient create ORCL 36.65 200
+java CompanyClient create MSFT 36.65 200
+java CompanyClient create INTL 36.65 200
+java CompanyClient create IN 36.65 200
+java CompanyClient find MSFT
+java CompanyClient find ORCL
+java CompanyClient find DELL
+java CompanyClient list
+java CompanyClient list 30 50
+java CompanyClient average
+cls
+notepad ..\Entity.txt
+notepad trading\HoldingPK.java
+javac trading\HoldingPK.java
+notepad trading\Company.java
+notepad trading\Holding.java
+notepad trading\HoldingLocal.java
+notepad trading\CompanyHome.java
+notepad trading\HoldingHome.java
+notepad trading\HoldingLocalHome.java
+javac trading\Holding*.java
+notepad trading\CompanyEJB.java
+notepad trading\HoldingEJB.java
+javac trading\Holding*.java
+cls
+copy CompanyClient.java HoldingClient.java
+notepad HoldingClient.java
+javac HoldingClient.java
+java HoldingClient 1001 SUNW
+java HoldingClient find  1001 SUNW
+java HoldingClient find  1001 MSFT
+java HoldingClient find  1001 ORCL
+java HoldingClient list 1001
+java HoldingClient list 1002
+java HoldingClient list 1003
+java HoldingClient list 1004
+doskey /h > cmdEJB2.txt
+notepad trading\AccountHome.java
+notepad trading\CompanyHome.java
+javac trading\CompanyHome.java
+notepad trading\CompanyLocalHome.java
+javac trading\CompanyLocalHome.java
+notepad trading\CompanyEJB.java
+javac trading\CompanyEJB.java
+cls
+notepad AccountClient.java
+copy AccountClient.java CompanyClient.java
+notepad CompanyClient.java
+javac CompanyClient.java
+java CompanyClient ORCL 36.65 200

@@ -1,0 +1,587 @@
+// Generated .IDL file (by the OLE/COM Object Viewer)
+// 
+// typelib filename: quartz.dll
+
+[
+  uuid(56A868B0-0AD4-11CE-B03A-0020AF0BA770),
+  version(1.0),
+  helpstring("ActiveMovie control type library")
+]
+library QuartzTypeLib
+{
+    // TLib :     // TLib : OLE Automation : {00020430-0000-0000-C000-000000000046}
+    importlib("stdole2.tlb");
+
+    // Forward declare all types defined in this typelib
+    interface IAMCollection;
+    interface IMediaControl;
+    interface IMediaEvent;
+    interface IMediaEventEx;
+    interface IMediaPosition;
+    interface IBasicAudio;
+    interface IVideoWindow;
+    interface IBasicVideo;
+    interface IBasicVideo2;
+    interface IDeferredCommand;
+    interface IQueueCommand;
+    interface IFilterInfo;
+    interface IRegFilterInfo;
+    interface IMediaTypeInfo;
+    interface IPinInfo;
+    interface IAMStats;
+
+    typedef [public]
+    long LONG_PTR;
+
+    [
+      odl,
+      uuid(56A868B9-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("Collection"),
+      dual,
+      oleautomation
+    ]
+    interface IAMCollection : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT Count([out, retval] long* plCount);
+        [id(0x60020001)]
+        HRESULT Item(
+                        [in] long lItem, 
+                        [out] IUnknown** ppUnk);
+        [id(0x60020002), propget]
+        HRESULT _NewEnum([out, retval] IUnknown** ppUnk);
+    };
+
+    [
+      odl,
+      uuid(56A868B1-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IMediaControl interface"),
+      dual,
+      oleautomation
+    ]
+    interface IMediaControl : IDispatch {
+        [id(0x60020000)]
+        HRESULT Run();
+        [id(0x60020001)]
+        HRESULT Pause();
+        [id(0x60020002)]
+        HRESULT Stop();
+        [id(0x60020003)]
+        HRESULT GetState(
+                        [in] long msTimeout, 
+                        [out] long* pfs);
+        [id(0x60020004)]
+        HRESULT RenderFile([in] BSTR strFilename);
+        [id(0x60020005)]
+        HRESULT AddSourceFilter(
+                        [in] BSTR strFilename, 
+                        [out] IDispatch** ppUnk);
+        [id(0x60020006), propget]
+        HRESULT FilterCollection([out, retval] IDispatch** ppUnk);
+        [id(0x60020007), propget]
+        HRESULT RegFilterCollection([out, retval] IDispatch** ppUnk);
+        [id(0x60020008)]
+        HRESULT StopWhenReady();
+    };
+
+    [
+      odl,
+      uuid(56A868B6-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IMediaEvent interface"),
+      dual,
+      oleautomation
+    ]
+    interface IMediaEvent : IDispatch {
+        [id(0x60020000)]
+        HRESULT GetEventHandle([out] LONG_PTR* hEvent);
+        [id(0x60020001)]
+        HRESULT GetEvent(
+                        [out] long* lEventCode, 
+                        [out] LONG_PTR* lParam1, 
+                        [out] LONG_PTR* lParam2, 
+                        [in] long msTimeout);
+        [id(0x60020002)]
+        HRESULT WaitForCompletion(
+                        [in] long msTimeout, 
+                        [out] long* pEvCode);
+        [id(0x60020003)]
+        HRESULT CancelDefaultHandling([in] long lEvCode);
+        [id(0x60020004)]
+        HRESULT RestoreDefaultHandling([in] long lEvCode);
+        [id(0x60020005)]
+        HRESULT FreeEventParams(
+                        [in] long lEvCode, 
+                        [in] LONG_PTR lParam1, 
+                        [in] LONG_PTR lParam2);
+    };
+
+    [
+      odl,
+      uuid(56A868C0-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IMediaEventEx interface")
+    ]
+    interface IMediaEventEx : IMediaEvent {
+        HRESULT _stdcall SetNotifyWindow(
+                        [in] LONG_PTR hwnd, 
+                        [in] long lMsg, 
+                        [in] LONG_PTR lInstanceData);
+        HRESULT _stdcall SetNotifyFlags([in] long lNoNotifyFlags);
+        HRESULT _stdcall GetNotifyFlags([out] long* lplNoNotifyFlags);
+    };
+
+    [
+      odl,
+      uuid(56A868B2-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IMediaPosition interface"),
+      dual,
+      oleautomation
+    ]
+    interface IMediaPosition : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT Duration([out, retval] double* plength);
+        [id(0x60020001), propput]
+        HRESULT CurrentPosition([in] double pllTime);
+        [id(0x60020001), propget]
+        HRESULT CurrentPosition([out, retval] double* pllTime);
+        [id(0x60020003), propget]
+        HRESULT StopTime([out, retval] double* pllTime);
+        [id(0x60020003), propput]
+        HRESULT StopTime([in] double pllTime);
+        [id(0x60020005), propget]
+        HRESULT PrerollTime([out, retval] double* pllTime);
+        [id(0x60020005), propput]
+        HRESULT PrerollTime([in] double pllTime);
+        [id(0x60020007), propput]
+        HRESULT Rate([in] double pdRate);
+        [id(0x60020007), propget]
+        HRESULT Rate([out, retval] double* pdRate);
+        [id(0x60020009)]
+        HRESULT CanSeekForward([out, retval] long* pCanSeekForward);
+        [id(0x6002000a)]
+        HRESULT CanSeekBackward([out, retval] long* pCanSeekBackward);
+    };
+
+    [
+      odl,
+      uuid(56A868B3-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IBasicAudio interface"),
+      dual,
+      oleautomation
+    ]
+    interface IBasicAudio : IDispatch {
+        [id(0x60020000), propput]
+        HRESULT Volume([in] long plVolume);
+        [id(0x60020000), propget]
+        HRESULT Volume([out, retval] long* plVolume);
+        [id(0x60020002), propput]
+        HRESULT Balance([in] long plBalance);
+        [id(0x60020002), propget]
+        HRESULT Balance([out, retval] long* plBalance);
+    };
+
+    [
+      odl,
+      uuid(56A868B4-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IVideoWindow interface"),
+      dual,
+      oleautomation
+    ]
+    interface IVideoWindow : IDispatch {
+        [id(0x60020000), propput]
+        HRESULT Caption([in] BSTR strCaption);
+        [id(0x60020000), propget]
+        HRESULT Caption([out, retval] BSTR* strCaption);
+        [id(0x60020002), propput]
+        HRESULT WindowStyle([in] long WindowStyle);
+        [id(0x60020002), propget]
+        HRESULT WindowStyle([out, retval] long* WindowStyle);
+        [id(0x60020004), propput]
+        HRESULT WindowStyleEx([in] long WindowStyleEx);
+        [id(0x60020004), propget]
+        HRESULT WindowStyleEx([out, retval] long* WindowStyleEx);
+        [id(0x60020006), propput]
+        HRESULT AutoShow([in] long AutoShow);
+        [id(0x60020006), propget]
+        HRESULT AutoShow([out, retval] long* AutoShow);
+        [id(0x60020008), propput]
+        HRESULT WindowState([in] long WindowState);
+        [id(0x60020008), propget]
+        HRESULT WindowState([out, retval] long* WindowState);
+        [id(0x6002000a), propput]
+        HRESULT BackgroundPalette([in] long pBackgroundPalette);
+        [id(0x6002000a), propget]
+        HRESULT BackgroundPalette([out, retval] long* pBackgroundPalette);
+        [id(0x6002000c), propput]
+        HRESULT Visible([in] long pVisible);
+        [id(0x6002000c), propget]
+        HRESULT Visible([out, retval] long* pVisible);
+        [id(0x6002000e), propput]
+        HRESULT Left([in] long pLeft);
+        [id(0x6002000e), propget]
+        HRESULT Left([out, retval] long* pLeft);
+        [id(0x60020010), propput]
+        HRESULT Width([in] long pWidth);
+        [id(0x60020010), propget]
+        HRESULT Width([out, retval] long* pWidth);
+        [id(0x60020012), propput]
+        HRESULT Top([in] long pTop);
+        [id(0x60020012), propget]
+        HRESULT Top([out, retval] long* pTop);
+        [id(0x60020014), propput]
+        HRESULT Height([in] long pHeight);
+        [id(0x60020014), propget]
+        HRESULT Height([out, retval] long* pHeight);
+        [id(0x60020016), propput]
+        HRESULT Owner([in] LONG_PTR Owner);
+        [id(0x60020016), propget]
+        HRESULT Owner([out, retval] LONG_PTR* Owner);
+        [id(0x60020018), propput]
+        HRESULT MessageDrain([in] LONG_PTR Drain);
+        [id(0x60020018), propget]
+        HRESULT MessageDrain([out, retval] LONG_PTR* Drain);
+        [id(0x6002001a), propget]
+        HRESULT BorderColor([out, retval] long* Color);
+        [id(0x6002001a), propput]
+        HRESULT BorderColor([in] long Color);
+        [id(0x6002001c), propget]
+        HRESULT FullScreenMode([out, retval] long* FullScreenMode);
+        [id(0x6002001c), propput]
+        HRESULT FullScreenMode([in] long FullScreenMode);
+        [id(0x6002001e)]
+        HRESULT SetWindowForeground([in] long Focus);
+        [id(0x6002001f)]
+        HRESULT NotifyOwnerMessage(
+                        [in] LONG_PTR hwnd, 
+                        [in] long uMsg, 
+                        [in] LONG_PTR wParam, 
+                        [in] LONG_PTR lParam);
+        [id(0x60020020)]
+        HRESULT SetWindowPosition(
+                        [in] long Left, 
+                        [in] long Top, 
+                        [in] long Width, 
+                        [in] long Height);
+        [id(0x60020021)]
+        HRESULT GetWindowPosition(
+                        [out] long* pLeft, 
+                        [out] long* pTop, 
+                        [out] long* pWidth, 
+                        [out] long* pHeight);
+        [id(0x60020022)]
+        HRESULT GetMinIdealImageSize(
+                        [out] long* pWidth, 
+                        [out] long* pHeight);
+        [id(0x60020023)]
+        HRESULT GetMaxIdealImageSize(
+                        [out] long* pWidth, 
+                        [out] long* pHeight);
+        [id(0x60020024)]
+        HRESULT GetRestorePosition(
+                        [out] long* pLeft, 
+                        [out] long* pTop, 
+                        [out] long* pWidth, 
+                        [out] long* pHeight);
+        [id(0x60020025)]
+        HRESULT HideCursor([in] long HideCursor);
+        [id(0x60020026)]
+        HRESULT IsCursorHidden([out] long* CursorHidden);
+    };
+
+    [
+      odl,
+      uuid(56A868B5-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IBasicVideo interface"),
+      dual,
+      oleautomation
+    ]
+    interface IBasicVideo : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT AvgTimePerFrame([out, retval] double* pAvgTimePerFrame);
+        [id(0x60020001), propget]
+        HRESULT BitRate([out, retval] long* pBitRate);
+        [id(0x60020002), propget]
+        HRESULT BitErrorRate([out, retval] long* pBitErrorRate);
+        [id(0x60020003), propget]
+        HRESULT VideoWidth([out, retval] long* pVideoWidth);
+        [id(0x60020004), propget]
+        HRESULT VideoHeight([out, retval] long* pVideoHeight);
+        [id(0x60020005), propput]
+        HRESULT SourceLeft([in] long pSourceLeft);
+        [id(0x60020005), propget]
+        HRESULT SourceLeft([out, retval] long* pSourceLeft);
+        [id(0x60020007), propput]
+        HRESULT SourceWidth([in] long pSourceWidth);
+        [id(0x60020007), propget]
+        HRESULT SourceWidth([out, retval] long* pSourceWidth);
+        [id(0x60020009), propput]
+        HRESULT SourceTop([in] long pSourceTop);
+        [id(0x60020009), propget]
+        HRESULT SourceTop([out, retval] long* pSourceTop);
+        [id(0x6002000b), propput]
+        HRESULT SourceHeight([in] long pSourceHeight);
+        [id(0x6002000b), propget]
+        HRESULT SourceHeight([out, retval] long* pSourceHeight);
+        [id(0x6002000d), propput]
+        HRESULT DestinationLeft([in] long pDestinationLeft);
+        [id(0x6002000d), propget]
+        HRESULT DestinationLeft([out, retval] long* pDestinationLeft);
+        [id(0x6002000f), propput]
+        HRESULT DestinationWidth([in] long pDestinationWidth);
+        [id(0x6002000f), propget]
+        HRESULT DestinationWidth([out, retval] long* pDestinationWidth);
+        [id(0x60020011), propput]
+        HRESULT DestinationTop([in] long pDestinationTop);
+        [id(0x60020011), propget]
+        HRESULT DestinationTop([out, retval] long* pDestinationTop);
+        [id(0x60020013), propput]
+        HRESULT DestinationHeight([in] long pDestinationHeight);
+        [id(0x60020013), propget]
+        HRESULT DestinationHeight([out, retval] long* pDestinationHeight);
+        [id(0x60020015)]
+        HRESULT SetSourcePosition(
+                        [in] long Left, 
+                        [in] long Top, 
+                        [in] long Width, 
+                        [in] long Height);
+        [id(0x60020016)]
+        HRESULT GetSourcePosition(
+                        [out] long* pLeft, 
+                        [out] long* pTop, 
+                        [out] long* pWidth, 
+                        [out] long* pHeight);
+        [id(0x60020017)]
+        HRESULT SetDefaultSourcePosition();
+        [id(0x60020018)]
+        HRESULT SetDestinationPosition(
+                        [in] long Left, 
+                        [in] long Top, 
+                        [in] long Width, 
+                        [in] long Height);
+        [id(0x60020019)]
+        HRESULT GetDestinationPosition(
+                        [out] long* pLeft, 
+                        [out] long* pTop, 
+                        [out] long* pWidth, 
+                        [out] long* pHeight);
+        [id(0x6002001a)]
+        HRESULT SetDefaultDestinationPosition();
+        [id(0x6002001b)]
+        HRESULT GetVideoSize(
+                        [out] long* pWidth, 
+                        [out] long* pHeight);
+        [id(0x6002001c)]
+        HRESULT GetVideoPaletteEntries(
+                        [in] long StartIndex, 
+                        [in] long Entries, 
+                        [out] long* pRetrieved, 
+                        [out] long* pPalette);
+        [id(0x6002001d)]
+        HRESULT GetCurrentImage(
+                        [in, out] long* pBufferSize, 
+                        [out] long* pDIBImage);
+        [id(0x6002001e)]
+        HRESULT IsUsingDefaultSource();
+        [id(0x6002001f)]
+        HRESULT IsUsingDefaultDestination();
+    };
+
+    [
+      odl,
+      uuid(329BB360-F6EA-11D1-9038-00A0C9697298),
+      helpstring("IBasicVideo2")
+    ]
+    interface IBasicVideo2 : IBasicVideo {
+        HRESULT _stdcall GetPreferredAspectRatio(
+                        [out] long* plAspectX, 
+                        [out] long* plAspectY);
+    };
+
+    [
+      odl,
+      uuid(56A868B8-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IDeferredCommand")
+    ]
+    interface IDeferredCommand : IUnknown {
+        HRESULT _stdcall Cancel();
+        HRESULT _stdcall Confidence([out] long* pConfidence);
+        HRESULT _stdcall Postpone([in] double newtime);
+        HRESULT _stdcall GetHResult([out] HRESULT* phrResult);
+    };
+
+    [
+      odl,
+      uuid(56A868B7-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("IQueueCommand")
+    ]
+    interface IQueueCommand : IUnknown {
+        HRESULT _stdcall InvokeAtStreamTime(
+                        [out] IDeferredCommand** pCmd, 
+                        [in] double time, 
+                        [in] GUID* iid, 
+                        [in] long dispidMethod, 
+                        [in] short wFlags, 
+                        [in] long cArgs, 
+                        [in] VARIANT* pDispParams, 
+                        [in, out] VARIANT* pvarResult, 
+                        [out] short* puArgErr);
+        HRESULT _stdcall InvokeAtPresentationTime(
+                        [out] IDeferredCommand** pCmd, 
+                        [in] double time, 
+                        [in] GUID* iid, 
+                        [in] long dispidMethod, 
+                        [in] short wFlags, 
+                        [in] long cArgs, 
+                        [in] VARIANT* pDispParams, 
+                        [in, out] VARIANT* pvarResult, 
+                        [out] short* puArgErr);
+    };
+
+    [
+      uuid(E436EBB3-524F-11CE-9F53-0020AF0BA770),
+      helpstring("Filtergraph type info")
+    ]
+    coclass FilgraphManager {
+        [default] interface IMediaControl;
+        interface IMediaEvent;
+        interface IMediaPosition;
+        interface IBasicAudio;
+        interface IBasicVideo;
+        interface IVideoWindow;
+    };
+
+    [
+      odl,
+      uuid(56A868BA-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("FilterInfo"),
+      dual,
+      oleautomation
+    ]
+    interface IFilterInfo : IDispatch {
+        [id(0x60020000)]
+        HRESULT FindPin(
+                        [in] BSTR strPinID, 
+                        [out] IDispatch** ppUnk);
+        [id(0x60020001), propget]
+        HRESULT Name([out, retval] BSTR* strName);
+        [id(0x60020002), propget]
+        HRESULT VendorInfo([out, retval] BSTR* strVendorInfo);
+        [id(0x60020003), propget]
+        HRESULT Filter([out, retval] IUnknown** ppUnk);
+        [id(0x60020004), propget]
+        HRESULT Pins([out, retval] IDispatch** ppUnk);
+        [id(0x60020005), propget]
+        HRESULT IsFileSource([out, retval] long* pbIsSource);
+        [id(0x60020006), propget]
+        HRESULT Filename([out, retval] BSTR* pstrFilename);
+        [id(0x60020006), propput]
+        HRESULT Filename([in] BSTR pstrFilename);
+    };
+
+    [
+      odl,
+      uuid(56A868BB-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("Registry Filter Info"),
+      dual,
+      oleautomation
+    ]
+    interface IRegFilterInfo : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT Name([out, retval] BSTR* strName);
+        [id(0x60020001)]
+        HRESULT Filter([out] IDispatch** ppUnk);
+    };
+
+    [
+      odl,
+      uuid(56A868BC-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("Media Type"),
+      dual,
+      oleautomation
+    ]
+    interface IMediaTypeInfo : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT Type([out, retval] BSTR* strType);
+        [id(0x60020001), propget]
+        HRESULT Subtype([out, retval] BSTR* strType);
+    };
+
+    [
+      odl,
+      uuid(56A868BD-0AD4-11CE-B03A-0020AF0BA770),
+      helpstring("Pin Info"),
+      dual,
+      oleautomation
+    ]
+    interface IPinInfo : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT Pin([out, retval] IUnknown** ppUnk);
+        [id(0x60020001), propget]
+        HRESULT ConnectedTo([out, retval] IDispatch** ppUnk);
+        [id(0x60020002), propget]
+        HRESULT ConnectionMediaType([out, retval] IDispatch** ppUnk);
+        [id(0x60020003), propget]
+        HRESULT FilterInfo([out, retval] IDispatch** ppUnk);
+        [id(0x60020004), propget]
+        HRESULT Name([out, retval] BSTR* ppUnk);
+        [id(0x60020005), propget]
+        HRESULT Direction([out, retval] long* ppDirection);
+        [id(0x60020006), propget]
+        HRESULT PinID([out, retval] BSTR* strPinID);
+        [id(0x60020007), propget]
+        HRESULT MediaTypes([out, retval] IDispatch** ppUnk);
+        [id(0x60020008)]
+        HRESULT Connect([in] IUnknown* pPin);
+        [id(0x60020009)]
+        HRESULT ConnectDirect([in] IUnknown* pPin);
+        [id(0x6002000a)]
+        HRESULT ConnectWithType(
+                        [in] IUnknown* pPin, 
+                        [in] IDispatch* pMediaType);
+        [id(0x6002000b)]
+        HRESULT Disconnect();
+        [id(0x6002000c)]
+        HRESULT Render();
+    };
+
+    [
+      odl,
+      uuid(BC9BCF80-DCD2-11D2-ABF6-00A0C905F375),
+      helpstring("Statistics"),
+      dual,
+      oleautomation
+    ]
+    interface IAMStats : IDispatch {
+        [id(0x60020000)]
+        HRESULT Reset();
+        [id(0x60020001), propget]
+        HRESULT Count([out, retval] long* plCount);
+        [id(0x60020002)]
+        HRESULT GetValueByIndex(
+                        [in] long lIndex, 
+                        [out] BSTR* szName, 
+                        [out] long* lCount, 
+                        [out] double* dLast, 
+                        [out] double* dAverage, 
+                        [out] double* dStdDev, 
+                        [out] double* dMin, 
+                        [out] double* dMax);
+        [id(0x60020003)]
+        HRESULT GetValueByName(
+                        [in] BSTR szName, 
+                        [out] long* lIndex, 
+                        [out] long* lCount, 
+                        [out] double* dLast, 
+                        [out] double* dAverage, 
+                        [out] double* dStdDev, 
+                        [out] double* dMin, 
+                        [out] double* dMax);
+        [id(0x60020004)]
+        HRESULT GetIndex(
+                        [in] BSTR szName, 
+                        [in] long lCreate, 
+                        [out] long* plIndex);
+        [id(0x60020005)]
+        HRESULT AddValue(
+                        [in] long lIndex, 
+                        [in] double dValue);
+    };
+};

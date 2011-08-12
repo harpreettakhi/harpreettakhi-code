@@ -1,0 +1,15 @@
+import "oaidl.idl";
+
+[uuid(A61D359D-2451-460D-81A9-4EC24AC9C276)]
+interface IInventory : IUnknown
+{
+	HRESULT Buy([in] int quantity, [in] float rate);
+	HRESULT Sell([in] int quantity, [in] float rate);
+	HRESULT GetStock([out, retval] int* pStock);
+};
+
+
+
+
+
+

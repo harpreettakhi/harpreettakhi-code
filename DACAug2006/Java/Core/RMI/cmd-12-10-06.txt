@@ -1,0 +1,49 @@
+java DepositoryClient -sell john MSFT 5
+java DepositoryClient -stock john MSFT
+java DepositoryClient -sell john MSFT 50
+java DepositoryClient -buy john INTL 10
+java DepositoryClient -buy jane SUNW 90
+java DepositoryClient -stock jane SUNW
+java DepositoryClient -stock jane MSFT
+dir depository
+dir depository*.class
+dir /W depository\*.class
+notepad StockExchangeServer.java
+javac StockExchangeServer.java
+start rmiregistry
+java StockExchangeServer
+cls
+javac StockExchangeServer.java
+java StockExchangeServer
+start java StockExchangeServer
+cls
+notepad StockExchangeClient.java
+javac StockExchangeClient.java
+java StockExchangeClient ORCL
+cls
+md depository
+notepad depository\Portfolio.java
+notepad depository\NoSuchSymbolException.java
+notepad depository\OutOfStockException.java
+javac depository\Portfolio.java
+dir
+cls
+dir depository
+cls
+notepad depository\PortfolioImpl.java
+javac depository\PortfolioImpl.java
+rmic -v1.2 depository.PortfolioImpl
+dir depository
+notepad depository\PortfolioFactory.java
+javac depository\PortfolioFactory.java
+notepad depository\PortfolioFactoryImpl.java
+javac depository\PortfolioFactoryImpl.java
+rmic -v1.2 depository.PortfolioFactoryImpl
+notepad DepositoryServer.java
+javac DepositoryServer.java
+start java DepositoryServer
+notepad DepositoryClient.java
+javac DepositoryClient.java
+java DepositoryClient -stock john MSFT
+java DepositoryClient -buy john MSFT 20
+java DepositoryClient -stock john MSFT

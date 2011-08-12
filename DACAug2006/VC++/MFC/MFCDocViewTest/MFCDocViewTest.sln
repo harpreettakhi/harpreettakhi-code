@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCDocViewTest", "MFCDocViewTest\MFCDocViewTest.vcproj", "{70348E63-32F1-488C-8F0C-0442647DD370}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{70348E63-32F1-488C-8F0C-0442647DD370}.Debug.ActiveCfg = Debug|Win32
+		{70348E63-32F1-488C-8F0C-0442647DD370}.Debug.Build.0 = Debug|Win32
+		{70348E63-32F1-488C-8F0C-0442647DD370}.Release.ActiveCfg = Release|Win32
+		{70348E63-32F1-488C-8F0C-0442647DD370}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <service name="InvestmentService" provider="java:RPC">
+    <parameter name="className" value="wwwtrade.InvestmentInfo"/>
+    <parameter name="allowedMethods" value="*"/>
+  </service>
+
+
+  <service name="BrokerService" provider="java:EJB">
+    <parameter name="beanJndiName" value="java:comp/env/ejb/Broker"/>
+    <parameter name="homeInterfaceName" value="trading.BrokerLocalHome"/>
+    <parameter name="remoteInterfaceName" value="trading.BrokerLocal"/>
+    <parameters name="allowedMethods" value="*"/> 
+  </service>
+
+
+</deployment>
+
+
+

@@ -1,0 +1,50 @@
+java Hello
+java Hello Jack
+cls
+javac Hello.java
+java Hello 
+java Hello Jack
+java Hello
+cls
+dir
+cls
+ftp 192.168.1.68
+cls
+java greeter
+cls
+dir
+cd ..
+cls
+java Hello
+set classpath=c:\Java\Core
+set classpath=
+set classpath=c:\Java\Core\Language
+java Hello
+java Hello Jack
+cd Language
+cls
+java Hello
+java Hello Jack
+set classpath=
+cls
+java Hello
+notepad hello.bat
+hello
+hello Jack
+cls
+notepad Greeter.class
+java Hello
+java Hello Jack
+cls
+javac hello.java
+java Hello Jack
+doskey /h > cmd-02-10-06.txt
+dir
+del Greeter.class
+dir
+cls
+dir
+java Hello
+cls
+java Hello Jack
+javac Hello.java

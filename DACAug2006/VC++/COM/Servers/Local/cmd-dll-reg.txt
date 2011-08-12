@@ -1,0 +1,50 @@
+nmake
+cls
+doskey /h > cmd-dll-reg.txt
+copy ..\InProcess\trader.cpp .
+dir
+copy ..\InProcess\client.cpp .
+cls
+copy ..\InProcess\comexp.def .
+copy ..\InProcess\trader.rc .
+dir
+notepad trader.idl
+midl trader.idl
+dir
+notepad makefile
+ren makefile.txt makefile
+notepad makefile
+nmake
+dir
+nmake
+cls
+regsvr32 traderps.dll
+notepad trader.cpp
+nmake
+dir
+trader.exe
+trader.exe -RegServer
+nmake
+trader.exe -UnregServer
+trader.exe -RegServer
+cl /MD /EHsc client.cpp trader_i.c ole32.lib
+client.exe
+notepad client.cpp
+cl /MD /EHsc client.cpp trader_i.c ole32.lib
+cls
+client.exe
+nmake
+client.exe
+cl /MD /EHsc client.cpp trader_i.c ole32.lib
+cls
+cl /MD /EHsc client.cpp trader_i.c ole32.lib
+client.exe
+cl /MD /EHsc client.cpp trader_i.c ole32.lib
+cls
+client.exe
+client.exe prithvi
+client.exe labasst3
+cls
+notepad makefile
+nmake
+notepad trader.idl

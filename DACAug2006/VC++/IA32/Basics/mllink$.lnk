@@ -1,0 +1,5 @@
+"varargstest.obj"
+"startup.obj"
+ /OUT:"varargstest.exe"
+
+

@@ -1,0 +1,49 @@
+javac ExternalizeTest.java
+del ExternalizeIOTest.class
+cls
+javac ExternalizeTest.java
+dir *.class
+cls
+java ExternalizeTest 12345678 245 219.95
+dir manager.*
+type manager.ext
+java ExternalizeTest
+cls
+javac payroll\EEmployee.java
+java ExternalizeTest 12345678 245 219.95
+java ExternalizeTest
+type manager.ext
+cls
+notepad payroll\Employee.java
+notepad payroll\SEmployee.java
+javac payroll\SEmployee.java
+copy ExternalizeTest.java SerializeTest.java
+notepad SerializeTest.java
+javac SerializeTest.java
+cls
+java SerializeTest 12345678 245 219.95
+java SerializeTest
+cls
+javac SerializeTest.java
+java SerializeTest 12345678 245 219.95
+java SerializeTest
+dir manager.*
+type manager.ser
+javac payroll\SEmployee.java
+java SerializeTest 12345678 245 219.95
+type manager.ser
+java SerializeTest
+javac SerializeTest.java
+java SerializeTest 12345678 245 219.95
+java SerializeTest
+type manager.ser
+javac payroll\SEmployee.java
+java SerializeTest
+javac payroll\SEmployee.java
+java SerializeTest
+cls
+serialver payroll.SEmployee
+javac payroll\SEmployee.java
+java SerializeTest
+cls
+notepad ExternalizeTest.java

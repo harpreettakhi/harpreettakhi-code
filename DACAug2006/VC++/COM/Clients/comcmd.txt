@@ -1,0 +1,41 @@
+cls
+cd ..
+cls
+md COM
+cd COM
+cls
+md Clients
+cd Clients
+cls
+oleview
+dir
+midl /h quartz.h quartz.IDL
+dir
+notepad quartz_i.c
+cls
+dir
+notepad ccomclient.c
+cl /MD ccomclient.c quartz_i.c ole32.lib
+ccomclient
+ccomclient abcd
+cl /MD ccomclient.c quartz_i.c ole32.lib
+ccomclient abcd
+cl /MD ccomclient.c quartz_i.c ole32.lib
+cls
+notepad quartz.IDL
+regedit
+cl /MD ccomclient.c quartz_i.c ole32.lib
+cls
+ccomclient abcd
+cl /MD ccomclient.c quartz_i.c ole32.lib
+cls
+cl /MD ccomclient.c quartz_i.c ole32.lib
+cls
+ccomclient c:\WINNT\Media\canyon.mid
+ccomclient c:\WINNT\clock.avi
+cls
+cl /MD ccomclient.c quartz_i.c ole32.lib
+cls
+ccomclient c:\WINNT\clock.avi
+ccomclient c:\WINNT\clock.avi 6000
+doskey /h > comcmd.txt

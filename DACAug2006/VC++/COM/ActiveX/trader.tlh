@@ -1,0 +1,125 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (feca8e05).
+//
+// c:\vc++\com\activex\trader.tlh
+//
+// C++ source equivalent of Win32 type library trader.dll
+// compiler-generated file created 12/02/06 at 00:49:36 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("ffb5d9ef-51b1-429b-8628-fa329cef7765"))
+/* LIBID */ __ACMETradingLib;
+struct /* coclass */ Trader;
+struct __declspec(uuid("a61d359d-2451-460d-81a9-4ec24ac9c276"))
+/* interface */ IInventory;
+struct __declspec(uuid("1d0fc49d-169e-4ac9-b3a4-44d6299802fb"))
+/* interface */ IAccount;
+struct __declspec(uuid("2a730892-0db7-43d5-831a-033f6d4163a1"))
+/* dispinterface */ ITradingInfo;
+enum TraderError;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IInventory, __uuidof(IInventory));
+_COM_SMARTPTR_TYPEDEF(IAccount, __uuidof(IAccount));
+_COM_SMARTPTR_TYPEDEF(ITradingInfo, __uuidof(ITradingInfo));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("efcdac32-9778-4300-9cf8-03a9f727e4e7"))
+Trader;
+    // [ default ] interface IInventory
+    // interface IAccount
+    // dispinterface ITradingInfo
+
+struct __declspec(uuid("a61d359d-2451-460d-81a9-4ec24ac9c276"))
+IInventory : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Buy (
+        int quantity,
+        float rate );
+    HRESULT Sell (
+        int quantity,
+        float rate );
+    int GetStock ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Buy (
+        /*[in]*/ int quantity,
+        /*[in]*/ float rate ) = 0;
+      virtual HRESULT __stdcall raw_Sell (
+        /*[in]*/ int quantity,
+        /*[in]*/ float rate ) = 0;
+      virtual HRESULT __stdcall raw_GetStock (
+        /*[out,retval]*/ int * pStock ) = 0;
+};
+
+struct __declspec(uuid("1d0fc49d-169e-4ac9-b3a4-44d6299802fb"))
+IAccount : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Credit (
+        double amount );
+    HRESULT Debit (
+        double amount );
+    double GetBalance ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Credit (
+        /*[in]*/ double amount ) = 0;
+      virtual HRESULT __stdcall raw_Debit (
+        /*[in]*/ double amount ) = 0;
+      virtual HRESULT __stdcall raw_GetBalance (
+        /*[out,retval]*/ double * pBalance ) = 0;
+};
+
+struct __declspec(uuid("2a730892-0db7-43d5-831a-033f6d4163a1"))
+ITradingInfo : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    int CountTrades ( );
+    double GetInvestment ( );
+};
+
+enum __declspec(uuid("fabf5192-f19b-42b6-9135-d15aa8baa6ff"))
+TraderError
+{
+    TRADER_E_OUTOFSTOCK = -2147220991,
+    TRADER_E_INSUFFICIENTFUNDS = -2147220990
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\vc++\com\activex\trader.tli"
+
+#pragma pack(pop)

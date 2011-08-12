@@ -1,0 +1,38 @@
+cls
+cd UserAPI
+cks
+cls
+notepad kbdhook.c
+notepad kbdhook.def
+cl /LD kbdhook.c kbdhook.def /link /base:0x48000000
+dumpbin kbdhook.dll
+dumpbin /exports kbdhook.dll
+notepad kbdhookmgr.c
+cl /MD kbdhookmgr.c kbdhook.lib
+cls
+cl /MD kbdhookmgr.c kbdhook.lib user32.lib
+kbdhookmgr.exe
+kbdhookmgr.exe Untitled - Notepad
+kbdhookmgr.exe abcd
+cls
+cd ..
+cls
+dir
+md MFC
+cd MFC
+cls
+notepad mfcmintest.cpp
+cl /MT mfcmintest.cpp
+cl /MT mfcmintest.cpp /link /entry:wWinMainCRTStartup
+cl /MT mfcmintest.cpp /link /entry:wWinMainCRTStartup /ignore:4089
+cl /MD /D_AFXDLL mfcmintest.cpp /link /entry:wWinMainCRTStartup
+cl /MD /D_AFXDLL mfcmintest.cpp /link /entry:wWinMainCRTStartup /ignore:4089
+notepad mfcmintest.cpp
+cls
+notepad mfcmintest.cpp
+copy mfcmintest.cpp mfcmsgtest.cpp
+notepad mfcmsgtest.cpp
+cl /MD /D_AFXDLL mfcmsgtest.cpp /link /entry:wWinMainCRTStartup /ignore:4089
+cls
+cl /MD /D_AFXDLL mfcmsgtest.cpp /link /entry:wWinMainCRTStartup /ignore:4089
+doskey/h > cmdmfc

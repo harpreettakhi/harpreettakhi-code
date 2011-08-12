@@ -1,0 +1,177 @@
+version: 1
+
+# entry-id: 1
+dn: dc=APSDHome
+dc: APSDHome
+objectClass: top
+objectClass: domain
+creatorsName: cn=directory manager
+createTimestamp: 20070414060100Z
+nsUniqueId: 75f60381-1dd211b2-80acbb77-19ad50bd
+aci: (targetattr != "userPassword") (version 3.0; acl "Anonymous access"; allo
+ w (read, search, compare)userdn = "ldap:///anyone";)
+aci: (targetattr != "nsroledn||aci")(version 3.0; acl "Allow self entry modifi
+ cation except for nsroledn and aci attributes"; allow (write)userdn ="ldap:/
+ //self";)
+aci: (targetattr = "*")(version 3.0; acl "Configuration Administrator"; allow 
+ (all) userdn = "ldap:///uid=admin,ou=Administrators, ou=TopologyManagement, 
+ o=NetscapeRoot";)
+aci: (targetattr ="*")(version 3.0;acl "Configuration Administrators Group";al
+ low (all) (groupdn = "ldap:///cn=Configuration Administrators, ou=Groups, ou
+ =TopologyManagement, o=NetscapeRoot");)
+aci: (targetattr = "*")(version 3.0; acl "SIE Group"; allow (all)groupdn = "ld
+ ap:///dc=APSDHome";)
+aci: (targetattr = "*") (version 3.0;acl "APSD Students";allow (all)(userdn = 
+ "ldap:///anyone");)
+modifiersName: cn=directory manager
+modifyTimestamp: 20070414060732Z
+
+# entry-id: 2
+dn: uid=student,dc=APSDHome
+uid: student
+givenName: APSD
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetorgperson
+sn: MET
+cn: APSD MET
+userPassword: {SSHA}Rv0HYKy2X9NLPrQI+0ssbjFF7PpNXnINewvqRw==
+creatorsName: cn=directory manager
+modifiersName: cn=directory manager
+createTimestamp: 20070414060245Z
+modifyTimestamp: 20070414060245Z
+nsUniqueId: bd7c8f81-1dd111b2-80adbb77-19ad50bd
+
+# entry-id: 3
+dn: cn=hrs01,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs01
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414060736Z
+modifyTimestamp: 20070414060736Z
+nsUniqueId: 704ced81-1dd211b2-80adbb77-19ad50bd
+
+# entry-id: 5
+dn: cn=hrs02,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs02
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061034Z
+modifyTimestamp: 20070414061034Z
+nsUniqueId: b7d37983-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 6
+dn: cn=hrs03,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs03
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061036Z
+modifyTimestamp: 20070414061036Z
+nsUniqueId: db96bf81-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 7
+dn: cn=hrs04,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs04
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061038Z
+modifyTimestamp: 20070414061038Z
+nsUniqueId: db96bf82-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 8
+dn: cn=hrs05,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs05
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061040Z
+modifyTimestamp: 20070414061040Z
+nsUniqueId: db96bf83-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 9
+dn: cn=hrs06,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs06
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061043Z
+modifyTimestamp: 20070414061043Z
+nsUniqueId: db96bf84-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 10
+dn: cn=hrs07,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs07
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061046Z
+modifyTimestamp: 20070414061046Z
+nsUniqueId: db96bf85-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 11
+dn: cn=hrs08,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs08
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061048Z
+modifyTimestamp: 20070414061048Z
+nsUniqueId: db96bf86-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 12
+dn: cn=hrs09,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs09
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061053Z
+modifyTimestamp: 20070414061053Z
+nsUniqueId: db96bf87-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 13
+dn: cn=hrs10,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs10
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061106Z
+modifyTimestamp: 20070414061106Z
+nsUniqueId: db96bf88-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 14
+dn: cn=hrs11,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs11
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061108Z
+modifyTimestamp: 20070414061108Z
+nsUniqueId: db96bf89-1dd111b2-80aebb77-19ad50bd
+
+# entry-id: 15
+dn: cn=hrs12,dc=apsdhome
+objectClass: javaContainer
+objectClass: top
+cn: hrs12
+creatorsName: uid=student,dc=apsdhome
+modifiersName: uid=student,dc=apsdhome
+createTimestamp: 20070414061112Z
+modifyTimestamp: 20070414061112Z
+nsUniqueId: db96bf8a-1dd111b2-80aebb77-19ad50bd
+

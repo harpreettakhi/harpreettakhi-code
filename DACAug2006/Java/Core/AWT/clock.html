@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Java Clock</title>
+    <script>
+      function toggleClock(btn){
+        if(btn.value == "Stop")
+          btn.value = "Start";
+        else
+          btn.value = "Stop";
+        document.applets["clock"].switchState();
+      }
+    </script>
+  </head>
+  <body>
+    <h1 align="center">Java Clock</h1>
+    <p align="center">
+      <applet name="clock" code="ClockApplet" width="132" height="32">
+	<param name="page" value="http://java.sun.com/">
+	<param name="time" value="15">
+      </applet>
+    </p>
+    <p align="center">
+	<input type="button" value="Stop" onclick="toggleClock(this)">
+    </p>
+  </body>
+</html>
+
+
+
+
+
+

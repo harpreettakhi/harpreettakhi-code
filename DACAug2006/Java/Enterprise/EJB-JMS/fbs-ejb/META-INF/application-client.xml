@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE application-client PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application Client 1.2//EN" "http://java.sun.com/j2ee/dtds/application-client_1_2.dtd">
+<application-client>
+
+    <ejb-ref>
+        <ejb-ref-name>ejb/CompanyBean</ejb-ref-name>
+        <home>trading.CompanyHome</home>
+        <remote>trading.Company</remote>
+        <ejb-ref-type>Entity</ejb-ref-type>
+    </ejb-ref>
+
+    <ejb-ref>
+        <ejb-ref-name>ejb/HoldingBean</ejb-ref-name>
+        <home>trading.HoldingHome</home>
+        <remote>trading.Holding</remote>
+        <ejb-ref-type>Entity</ejb-ref-type>
+    </ejb-ref>
+
+    <ejb-ref>
+        <ejb-ref-name>ejb/TellerBean</ejb-ref-name>
+        <home>trading.TellerHome</home>
+        <remote>trading.Teller</remote>
+        <ejb-ref-type>Session</ejb-ref-type>
+    </ejb-ref>
+
+    <ejb-ref>
+        <ejb-ref-name>ejb/BrokerBean</ejb-ref-name>
+        <home>trading.BrokerHome</home>
+        <remote>trading.Broker</remote>
+        <ejb-ref-type>Session</ejb-ref-type>
+    </ejb-ref>
+
+    <resource-ref>
+        <res-ref-name>jms/FBSQCF</res-ref-name>
+        <res-type>javax.jms.QueueConnectionFactory</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+    <resource-ref>
+        <res-ref-name>jms/FBSTCF</res-ref-name>
+        <res-type>javax.jms.TopicConnectionFactory</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+</application-client>
+
+
+
+
+
+

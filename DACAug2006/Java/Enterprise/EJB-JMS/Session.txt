@@ -1,0 +1,88 @@
+//bean providers code
+
+public interface MyBean extends javax.ejb.EJBObject{
+    T businessMethod(...) throws java.rmi.RemoteException;
+    ... 
+}
+
+public interface MyBeanHome extends javax.ejb.EJBHome{
+    MyBean create(...) throws javax.ejb.CreateException, java.rmi.RemoteException;
+    ...
+}
+
+public class MyBeanEJB implements javax.ejb.SessionBean{
+
+    private SessionContext context;
+    
+    public T businessMethod(...){
+        ...
+    }
+    
+    public void ejbCreate(...){
+        ...
+    }
+
+
+    public void setSessionContext(SessionContext ctx){
+        context = ctx;
+    }     
+
+    public void ejbActivate(){}
+
+    public void ejbPassivate(){}
+
+    public void ejbRemove(){}
+
+}
+    
+//server provided code
+
+public class MyBeanWrapper extends javax.rmi.PortableRemoteObject implements MyBean{
+    
+    private MyBeanEJB bean;
+    
+    public MyBeanWrapper(MyBeanEJB ejb) throws java.rmi.RemoteException{
+        bean = ejb;
+    }
+
+    public T businessMethod(...){
+        //pre-process
+        T result = bean.businessMethod(...);
+        //post-process
+        return result;
+    }      
+
+    ...
+    
+    public void remove(){
+        //pre-process
+        bean.remove();
+        //post-process
+    }    
+
+}
+
+public class MyBeanHomeImpl extends javax.rmi.PortableRemoteObject implements MyBeanHome{
+
+    private SessionContext ctx = new SessionContextImpl(this);
+    
+    public MyBeanHomeImpl() throws java.rmi.RemoteException{}
+
+    public MyBean create(...){
+        // pre-process
+        MyBeanEJB bean = new MyBeanEJB();         
+        bean.setSessionContext(ctx);        
+        bean.ejbCreate(...);
+        MyBeanWrapper wrapper = new MyBeanWrapper(bean);
+        //post-process
+        return wrapper;
+    }    
+
+    ...
+        
+}
+
+
+
+
+

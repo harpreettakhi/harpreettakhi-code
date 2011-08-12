@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<MyDataSet>
+  <xs:schema id="MyDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:codegen="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="MyDataSet" msdata:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+
+          <xs:element name="ATable">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="a_field" codegen:typedName="AField" type="xs:field-type" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+</MyDataSet>

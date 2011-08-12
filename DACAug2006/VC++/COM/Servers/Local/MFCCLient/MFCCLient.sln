@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCCLient", "MFCCLient\MFCCLient.vcproj", "{09DFA736-797A-4ABB-9C04-1C8600C2684F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{09DFA736-797A-4ABB-9C04-1C8600C2684F}.Debug.ActiveCfg = Debug|Win32
+		{09DFA736-797A-4ABB-9C04-1C8600C2684F}.Debug.Build.0 = Debug|Win32
+		{09DFA736-797A-4ABB-9C04-1C8600C2684F}.Release.ActiveCfg = Release|Win32
+		{09DFA736-797A-4ABB-9C04-1C8600C2684F}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

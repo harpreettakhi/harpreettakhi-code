@@ -1,0 +1,50 @@
+cls
+notepad cppcalltest.cpp
+cl /c cppcalltest.cpp
+cl cppcalltest.cpp
+cl
+cl cppcalltest.cpp
+cls
+cl cppcalltest.cpp
+cls
+cl cppcalltest.cpp
+cls
+notepad gfsforcpp.asm
+cl /c cppcalltest.cpp
+dumpbin /symbols customcalltest.obj
+dumpbin /symbols cppcalltest.obj
+cls
+ml /c gfsforcpp.asm
+cls
+cl cppcalltest.cpp gfsforcpp.obj
+cppcalltest.exe
+echo %errorlevel%
+cl cppcalltest.cpp gfsforcpp.obj
+cls
+ml /c gfsforcpp.asm
+cl cppcalltest.cpp gfsforcpp.obj
+cppcalltest.exe
+echo %errorlevel%
+ml /c gfsforc.asm
+ml /c gfsforcpp.asm
+cl cppcalltest.cpp gfsforcpp.obj
+cls
+cppcalltest.exe
+echo %errorlevel%
+ml /c gfsforcpp.asm
+cls
+cl cppcalltest.cpp gfsforcpp.obj
+cls
+cppcalltest.exe
+echo %errorlevel%
+doskey /h > cmdIA32e.txt
+echo %errorlevel%
+dumpbin /disasm customcalltest.obj
+cls
+cl customcalltest.c gfsforc.obj
+cls
+cl customcalltest.c gfsforc.obj
+cls
+customcalltest.exe
+echo %errorlevel%
+dumpbin /disasm customcalltest.obj

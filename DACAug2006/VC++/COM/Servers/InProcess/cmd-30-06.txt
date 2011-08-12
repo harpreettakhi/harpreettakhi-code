@@ -1,0 +1,50 @@
+cppcomclient c:\WINNT\clock.avi 6000
+cls
+notepad vccomclient.cpp
+cl /MD /EHsc vccomclient.cpp 
+dir
+vccomclient.exe C:\WINNT\clock.avi
+cls
+VBCOMClient.exe
+VBCOMClient.exe C:\WINNT\clock.avi
+VBCOMClient.exe abcd
+cls
+cd ..
+cls
+dir
+md Servers
+cd Servers
+cls
+md InProcess
+notepad trader.idl
+uuidgen /c
+cd InProcess
+move ..\trader.idl .
+cls
+midl trader.idl
+notepad trader.idl
+cls
+midl trader.idl
+notepad trader.idl
+dir
+uuidgen /c
+cls
+midl trader.idl
+dir
+notepad trader.cpp
+cl /c trader.cpp
+cls
+cl /c trader.cpp
+notepad comexp.def
+cls
+cl /MD /LD trader.cpp trader_i.c comexp.def
+dir *.dll
+dir trader.*
+notepad trader.rc
+rc trader.rc
+cl /MD /LD trader.cpp trader_i.c comexp.def trader.RES
+dir *.dll
+cls
+doskey /h > cmd-30-06.txt
+cl /MD /EHsc cppcomclient.cpp quartz_i.c ole32.lib
+cls

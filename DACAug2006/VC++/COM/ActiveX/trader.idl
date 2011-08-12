@@ -1,0 +1,58 @@
+import "oaidl.idl";
+
+[uuid(A61D359D-2451-460D-81A9-4EC24AC9C276)]
+interface IInventory : IDispatch	// Dual
+{
+	HRESULT Buy([in] int quantity, [in] float rate);
+	HRESULT Sell([in] int quantity, [in] float rate);
+	HRESULT GetStock([out, retval] int* pStock);
+};
+
+[uuid(1D0FC49D-169E-4AC9-B3A4-44D6299802FB)]
+interface IAccount : IUnknown		// Custom
+{
+	HRESULT Credit([in] double amount);
+	HRESULT Debit([in] double amount);
+	HRESULT GetBalance([out, retval] double* pBalance);
+};
+
+[uuid(2A730892-0DB7-43D5-831A-033F6D4163A1)]
+dispinterface ITradingInfo
+{
+properties:
+methods:
+	[id(3)] int CountTrades();
+	[id(4)] double GetInvestment();
+};
+
+[uuid(FFB5D9EF-51B1-429B-8628-FA329CEF7765), helpstring("ACME Trading Objects")]
+library ACMETradingLib
+{
+	importlib("stdole32.tlb");
+	
+	[uuid(EFCDAC32-9778-4300-9CF8-03A9F727E4E7)]
+	coclass Trader
+	{
+		[default] interface IInventory;
+		interface IAccount;
+		dispinterface ITradingInfo;
+	};
+
+	[uuid(FABF5192-F19B-42B6-9135-D15AA8BAA6FF)]
+	enum TraderError
+	{
+		TRADER_E_OUTOFSTOCK = 0x80040201,
+		TRADER_E_INSUFFICIENTFUNDS = 0x80040202
+	};
+};
+
+
+
+
+
+
+
+
+
+
+

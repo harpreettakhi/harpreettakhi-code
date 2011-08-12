@@ -1,0 +1,50 @@
+java LookupTest jane
+copy LookupTest.java ListBindingsTest.java
+notepad ListBindingsTest.java
+cls
+javac ListBindingsTest.java
+cls
+java ListBindingsTest 
+doskey/history > jndicmd.txt
+javac ContactInfo.java
+cls
+javac ContactInfo.java
+cls
+notepad ContactInfoFactory.java
+javac ContactInfoFactory.java
+cls
+notepad BindTest.java
+javac BindTest.java
+java BindTest jack 26475879 NY USA
+cls
+java BindTest jill 22545879 London UK
+java BindTest jane 46545879 Paris France
+java BindTest suhas 26928720 Pune India
+notepad jndi.properties
+copy BindTest.java LookupTest.java
+notepad LookupTest.java
+cls
+javac LookupTest.java
+java LookupTest jack
+java LookupTest jill
+java LookupTest suhas
+java LookupTest jim
+cls
+copy LookupTest.java UnbindTest.java
+notepad UnbindTest.java
+javac UnbindTest.java
+cls
+java UnbindTest
+java UnbindTest jack
+java LookupTest jack
+cls
+java UnbindTest jim
+java BindTest jane 46545879 Paris France
+cls
+java BindTest jack 26475879 NY USA
+copy LookupTest.java RebindTest.java
+notepad RebindTest.java
+javac RebindTest.java
+cls
+java LookupTest jane
+java RebindTest jane 46545877

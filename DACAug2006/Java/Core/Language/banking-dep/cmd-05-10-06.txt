@@ -1,0 +1,47 @@
+cd java
+cd Core
+cd Language
+cls
+notepad banking\Profitable.java
+javac banking\Profitable.java
+javap banking.Profitable
+javac banking\Profitable.java
+notepad banking\SavingsAccount.java
+cls
+javac banking\SavingsAccount.java
+notepad BankTest2.java
+cls
+javac banking\Profitable.java
+notepad banking\Profitable.java
+javac banking\Profitable.java
+cls
+md banking-docs
+cls
+javadoc -d banking-docs banking
+cls
+md banking-src
+md banking-src\banking
+move banking\*.java banking-src\banking
+cls
+java BankTest2
+md banking-dep
+jar cf banklib.jar banking
+dir
+cls
+jar tf banklib.jar
+cd banking-dep
+cls
+java BankTest1
+java -cp .;banklib.jar BankTest2
+java BankTest2
+set classpath=.;banklib.jar
+java BankTest2
+set classpath=
+java BankTest2
+cls
+java -cp .;banklib.jar BankTest2
+java BankTest2
+cls
+notepad bankapp.bat
+bankapp
+bankapp 2000

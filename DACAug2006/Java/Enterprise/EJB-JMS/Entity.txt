@@ -1,0 +1,135 @@
+//bean providers code
+
+public interface MyBean extends javax.ejb.EJBObject{
+    T accessorMethod(...) throws java.rmi.RemoteException;
+    ... 
+}
+
+public interface MyBeanHome extends javax.ejb.EJBHome{
+    MyBean create(...) throws javax.ejb.CreateException, java.rmi.RemoteException;
+    MyBean findByPrimaryKey(PK key) throws javax.ejb.FinderException, java.rmi.RemoteException;
+    ...
+}
+
+public class MyBeanEJB implements javax.ejb.EntityBean{
+
+    private EntityContext context;
+    private T persistentField;
+    
+    public T accessorMethod(...){
+        ...
+    }
+    
+    public PK ejbCreate(...){
+       //insert new row in database
+        ...
+    }
+
+    public void ejbPostCreate(...){
+        ...
+    }
+
+    public PK ejbFindByPrimaryKey(PK key){
+        //check if key is available in database if so return key else throw javax.ejb.FinderException
+        ...
+    }
+
+    public void ejbLoad(){
+        //load member fields from database
+        ...
+    }
+
+    public void ejbStore(){
+        //store member fields into database
+        ...
+    }
+
+    public void setEntityContext(EntityContext ctx){
+        context = ctx;
+    }     
+
+    public void unsetEntityContext(){
+        context = null;        
+    }
+
+    public void ejbActivate(){}
+
+    public void ejbPassivate(){}
+
+    public void ejbRemove(){
+        //remove row from database
+        ...
+    }
+
+}
+    
+//server provided code
+
+public class MyBeanWrapper extends javax.rmi.PortableRemoteObject implements MyBean{
+    
+    private MyBeanEJB bean;
+    
+    public MyBeanWrapper(MyBeanEJB ejb) throws java.rmi.RemoteException{
+        bean = ejb;
+    }
+
+    public T accessorMethod(...){
+        //pre-process
+        bean.ejbLoad();
+        T result = bean.accessorMethod(...);
+        bean.ejbStore();
+        //post-process
+        return result;
+    }      
+
+    ...
+    
+    public void remove(){
+        //pre-process
+        bean.ejbRemove();
+        bean.unsetEntityContext();
+        //post-process
+    }    
+
+}
+
+public class MyBeanHomeImpl extends javax.rmi.PortableRemoteObject implements MyBeanHome{
+
+    private java.util.Map store = new java.util.HashMap();
+
+    public MyBeanHomeImpl() throws java.rmi.RemoteException{}
+
+    public MyBean create(...){
+        // pre-process
+        MyBeanEJB bean = new MyBeanEJB();
+        PK key = bean.ejbCreate(...);
+        bean.setEntityContext(new EntityContextImpl(this, key));
+	bean.ejbPostCreate(...);
+        MyBeanWrapper wrapper = new MyBeanWrapper(bean);
+        store.put(key, wrapper);
+        //post-process
+        return wrapper;
+    }    
+
+    public MyBean findByPrimaryKey(PK key){
+        //pre-process
+        MyBeanWrapper wrapper = (MyBeanWrapper) store.get(key);
+        if(wrapper == null){
+            MyBeanEJB bean = new MyBeanEJB();
+            PK key = bean.ejbFindByPrimaryKey(key);
+            bean.setEntityContext(new EntityContextImpl(this, key));
+            wrapper = new MyBeanWrapper(bean);
+            store.put(key, wrapper);            
+        } 
+        //post-process 
+        return wrapper;
+    }
+
+    ...
+        
+}
+
+
+
+
+

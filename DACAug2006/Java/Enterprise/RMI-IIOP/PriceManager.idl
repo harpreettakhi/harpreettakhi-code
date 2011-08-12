@@ -1,0 +1,15 @@
+
+
+
+    interface PriceManager {
+    
+        double getUnitPrice(
+            in long arg0 );
+        float getBulkDiscount(
+            in long arg0 );
+    
+    };
+
+#pragma ID PriceManager "RMI:PriceManager:0000000000000000"
+
+

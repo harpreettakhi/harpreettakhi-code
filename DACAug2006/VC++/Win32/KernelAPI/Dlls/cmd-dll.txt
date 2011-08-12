@@ -1,0 +1,50 @@
+cls
+dumpbin /exports euclid.dll
+dir
+notepad implinktest.c
+cl implinktest.c
+cl implinktest.c euclid.lib
+dumpbin /exports euclid.dll
+cls
+cl implinktest.c euclid.lib
+cls
+implinktest.exe
+echo %errorlevel%
+dumpbin /disasm implinktest.obj
+dumpbin /imports implinktest.obj
+dumpbin /imports implinktest.exe
+cls
+dumpbin /disasm implinktest.obj
+cls
+cl implinktest.c euclid.lib /entry:main
+cl implinktest.c euclid.lib /link /entry:main
+cl implinktest.c euclid.lib /link /nodefaultlib /entry:main
+cl implinktest.c euclid.lib /link /defaultlib:kernel32 /entry:main
+cl implinktest.c euclid.lib /link /entry:wmain
+cls
+dir *.exe
+dumpbin /disasm implinktest.obj
+dumpbin /disasm implinktest.exe
+cl implinktest.c euclid.lib /link /entry:wmain
+dumpbin /disasm implinktest.exe
+dumpbin /imports implinktest.exe
+dumpbin /exports euclid.dll
+doskey /h > cmd-dll.txt
+cls
+cl /LD /D_TESTING euclid.c /link /entry:DllMain
+cl /LD /D_TESTING euclid.c kernel32.lib /link /entry:DllMain
+dir *.dll
+cl /LD /D_TESTING euclid.c
+dir *.dll
+cls
+dir *.dll
+dumpbin /exports euclid.dll
+dumpbin /headers euclid.dll
+dumpbin /exports euclid.dll
+cl /LD /D_TESTING euclid.c /link /base:0x20000000
+dumpbin /headers euclid.dll
+cls
+cl /LD /D_TESTING euclid.c /link /base:0x24000000
+dumpbin /headers euclid.dll
+cls
+dumpbin /headers "c:\winnt\system32\kernel32.dll"

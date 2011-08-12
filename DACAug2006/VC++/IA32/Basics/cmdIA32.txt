@@ -1,0 +1,50 @@
+notepad locvartest.asm
+ml locvartest.asm startup.obj
+cls
+locvartest.exe
+cls
+notepad varargstest.asm
+ml varargstest.asm startup.obj
+cls
+varargstest.exe
+cls
+doskey /h > cmdIA32.txt
+whilelooptest.exe
+whilelooptest.exe jack john jill
+ml whilelooptest.asm startup.obj
+cls
+whilelooptest.exe jack john jill
+ml whilelooptest.asm startup.obj
+cls
+whilelooptest.exe jack john jill
+cls
+ml whilelooptest.asm startup.obj
+cls
+whilelooptest.exe jack john jill
+notepad console.inc
+copy whilelooptest.asm forlooptest.asm
+notepad forlooptest.asm
+cls
+ml forlooptest.asm startup.obj
+cls
+forlooptest.exe jack john jill
+forlooptest.exe jack john jill jane
+forlooptest.exe jack john
+forlooptest.exe
+cls
+notepad functiontest.asm
+ml functiontest.asm startup.obj
+cls
+ml functiontest.asm startup.obj
+cls
+ml functiontest.asm startup.obj
+cls
+functiontest.exe
+cls
+ml functiontest.asm startup.obj
+cls
+functiontest.exe
+cls
+functiontest.exe
+cls
+copy functiontest.asm locvartest.asm

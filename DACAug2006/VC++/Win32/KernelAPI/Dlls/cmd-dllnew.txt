@@ -1,0 +1,56 @@
+copy euclid.c dijkstra.c
+notepad dijkstra.c
+cl /LD dijkstra.c
+cl /LD dijkstra.c gcdlcm.def
+dir *.dll
+dumpbin /exports dijkstra.dll
+cl /LD dijkstra.c gcdlcm.def /link /noentry
+dir *.dll
+copy implinktest.c explinktest.c
+notepad explinktest.c
+cl /c explinktest.c
+cl /MD explinktest.c
+dumpbin /imports explinktest.exe
+explinktest.exe
+explinktest.exe 24 36 euclid.dll
+explinktest.exe 24 36 dijkstra.dll
+explinktest.exe 24 -36 euclid.dll
+explinktest.exe 24 -36 dijkstra.dll
+del euclid.dll
+explinktest.exe
+explinktest.exe 24 -36 euclid.dll
+implinktest.exe
+copy implinktest.c dlimplinktest.c
+notepad dlimplinktest.c
+cl /MD dlimplinktest.c euclid.lib delayimpl.lib /link /delayload:euclid.dll
+cl /MD dlimplinktest.c euclid.lib delayimp.lib /link /delayload:euclid.dll
+dlimplinktest.exe
+dlimplinktest.exe 24 36
+cl /LD euclid.c gcdlcm.def /link /base:0x25000000 
+cls
+dlimplinktest.exe 24 36
+doskey /h > cmd-dllnew.txt
+implinktest.exe 24 36
+cl implinktest.c euclid.lib
+cl /MD implinktest.c euclid.lib
+implinktest.exe 24 36
+notepad euclid.c
+cl /LD /D_TESTING euclid.c /link /base:0x25000000
+cls
+implinktest.exe 24 36
+dumpbin /exports euclid.dll
+cls
+notepad euclid.def
+ren euclid.def gcdlcm.def
+cl /LD euclid.c gcdlcm.def /link /base:0x25000000 
+dumpbin /exports euclid.dll
+implinktest.exe 24 36
+cl /MD implinktest.c euclid.lib
+cls
+implinktest.exe 24 36
+
+-------------------------------------------
+
+
+cl /MD dlimplinktest.c euclid.lib delayimp.lib /link /delayload:euclid.dll
+cl /LD dijkstra.c gcdlcm.def /link /noentry

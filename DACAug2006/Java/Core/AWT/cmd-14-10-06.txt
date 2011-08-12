@@ -1,0 +1,44 @@
+cls
+dir
+cd AWT
+cls
+notepad ClockApplet.java
+javac ClockApplet.java
+notepad clock.html
+clock.html
+javac ClockApplet.java
+cls
+clock.html
+javac ClockApplet.java
+clock.html
+cls
+copy AWTEMICalc.java SwingEMICalc.java
+notepad SwingEMICalc.java
+javac SwingEMICalc.java
+java SwingEMICalc
+javap javax.swing.event.DocumentListener
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+cls
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+javac SwingEMICalc.java
+java SwingEMICalc
+cls
+doskey /h > cmd-14-10-06.txt

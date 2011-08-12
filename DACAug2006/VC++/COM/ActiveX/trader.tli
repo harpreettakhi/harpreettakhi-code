@@ -1,0 +1,70 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (feca8e05).
+//
+// c:\vc++\com\activex\trader.tli
+//
+// Wrapper implementations for Win32 type library trader.dll
+// compiler-generated file created 12/02/06 at 00:49:36 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IInventory wrapper method implementations
+//
+
+inline HRESULT IInventory::Buy ( int quantity, float rate ) {
+    HRESULT _hr = raw_Buy(quantity, rate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IInventory::Sell ( int quantity, float rate ) {
+    HRESULT _hr = raw_Sell(quantity, rate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline int IInventory::GetStock ( ) {
+    int _result = 0;
+    HRESULT _hr = raw_GetStock(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IAccount wrapper method implementations
+//
+
+inline HRESULT IAccount::Credit ( double amount ) {
+    HRESULT _hr = raw_Credit(amount);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAccount::Debit ( double amount ) {
+    HRESULT _hr = raw_Debit(amount);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline double IAccount::GetBalance ( ) {
+    double _result = 0;
+    HRESULT _hr = raw_GetBalance(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// dispinterface ITradingInfo wrapper method implementations
+//
+
+inline int ITradingInfo::CountTrades ( ) {
+    int _result = 0;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, NULL);
+    return _result;
+}
+
+inline double ITradingInfo::GetInvestment ( ) {
+    double _result = 0;
+    _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_R8, (void*)&_result, NULL);
+    return _result;
+}

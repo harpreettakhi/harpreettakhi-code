@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- Generated 12/02/06 by Microsoft SOAP Toolkit WSDL File Generator, Version 3.00.1325.0 --> 
+<definitions
+	name='LoanService'
+	targetNamespace='http://prithvi/atlcom/LoanService/wsdl/'
+	xmlns:wsdlns='http://prithvi/atlcom/LoanService/wsdl/'
+	xmlns:typens='http://prithvi/atlcom/LoanService/type/'
+	xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+	xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+	xmlns:stk='http://schemas.microsoft.com/soap-toolkit/wsdl-extension'
+	xmlns:dime='http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/'
+	xmlns:ref='http://schemas.xmlsoap.org/ws/2002/04/reference/'
+	xmlns:content='http://schemas.xmlsoap.org/ws/2002/04/content-type/'
+	xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+	xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+	<types>
+		<schema
+			targetNamespace='http://prithvi/atlcom/LoanService/type/'
+			xmlns='http://www.w3.org/2001/XMLSchema'
+			xmlns:SOAP-ENC='http://schemas.xmlsoap.org/soap/encoding/'
+			xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+			elementFormDefault='qualified'>
+
+			<import namespace='http://schemas.xmlsoap.org/soap/encoding/'/>
+			<import namespace='http://schemas.xmlsoap.org/wsdl/'/>
+			<import namespace='http://schemas.xmlsoap.org/ws/2002/04/reference/'/>
+			<import namespace='http://schemas.xmlsoap.org/ws/2002/04/content-type/'/>
+
+		</schema>
+	</types>
+
+	<message name='PersonalLoan.GetInterestRate'>
+		<part name='amount' type='xsd:double'/>
+		<part name='period' type='xsd:int'/>
+	</message>
+
+	<message name='PersonalLoan.GetInterestRateResponse'>
+		<part name='Result' type='xsd:float'/>
+	</message>
+
+	<message name='PersonalLoan.GetMonthlyInstallment'>
+		<part name='amount' type='xsd:double'/>
+		<part name='period' type='xsd:int'/>
+	</message>
+
+	<message name='PersonalLoan.GetMonthlyInstallmentResponse'>
+		<part name='Result' type='xsd:double'/>
+	</message>
+
+	<portType name='PersonalLoanSoapPort'>
+
+		<operation name='GetInterestRate' parameterOrder='amount period'>
+			<input message='wsdlns:PersonalLoan.GetInterestRate'/>
+			<output message='wsdlns:PersonalLoan.GetInterestRateResponse'/>
+		</operation>
+
+		<operation name='GetMonthlyInstallment' parameterOrder='amount period'>
+			<input message='wsdlns:PersonalLoan.GetMonthlyInstallment'/>
+			<output message='wsdlns:PersonalLoan.GetMonthlyInstallmentResponse'/>
+		</operation>
+
+	</portType>
+
+	<binding name='PersonalLoanSoapBinding' type='wsdlns:PersonalLoanSoapPort' >
+
+		<stk:binding preferredEncoding='UTF-8'/>
+		<soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+
+		<operation name='GetInterestRate'>
+			<soap:operation soapAction='http://prithvi/atlcom/LoanService/action/PersonalLoan.GetInterestRate'/>
+			<input>
+				<soap:body
+					use='encoded'
+					namespace='http://prithvi/atlcom/LoanService/message/'
+					encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+					parts='amount period'/>
+			</input>
+			<output>
+				<soap:body
+					use='encoded'
+					namespace='http://prithvi/atlcom/LoanService/message/'
+					encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+					parts='Result'/>
+			</output>
+		</operation>
+
+		<operation name='GetMonthlyInstallment'>
+			<soap:operation soapAction='http://prithvi/atlcom/LoanService/action/PersonalLoan.GetMonthlyInstallment'/>
+			<input>
+				<soap:body
+					use='encoded'
+					namespace='http://prithvi/atlcom/LoanService/message/'
+					encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+					parts='amount period'/>
+			</input>
+			<output>
+				<soap:body
+					use='encoded'
+					namespace='http://prithvi/atlcom/LoanService/message/'
+					encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+					parts='Result'/>
+			</output>
+		</operation>
+
+	</binding>
+
+	<service name='LoanService' >
+		<port name='PersonalLoanSoapPort' binding='wsdlns:PersonalLoanSoapBinding' >
+			<soap:address location='http://prithvi/atlcom/LoanService.ASP'/>
+		</port>
+	</service>
+
+</definitions>

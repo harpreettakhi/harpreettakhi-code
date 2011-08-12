@@ -1,0 +1,10 @@
+EXPORTS
+
+	InstallHook
+	UninstallHook
+	GetKeyCount
+
+SECTIONS
+
+	.kbdhk	READ WRITE SHARED
+	

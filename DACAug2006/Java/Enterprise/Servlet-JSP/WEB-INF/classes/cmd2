@@ -1,0 +1,25 @@
+cls
+cd 
+cls
+cd Enterprise
+cd Servlet-JSP
+cls
+\orion\bin\setenv.bat
+javap javax.servlet.jsp.tagext.TagSupport
+cd WEB-INF\classes
+notepad sales\SelectProductTag.java
+javac sales\SelectProductTag.java
+cls
+copy sales\SelectProductTag.java sales\RunQueryTag.java
+notepad sales\RunQueryTag.java
+javac sales\RunQueryTag.java
+cls
+javac sales\RunQueryTag.java
+cls
+copy sales\LoginServlet.java sales\LogoutServlet.java
+notepad sales\LogoutServlet.java
+javac sales\LogoutServlet.java
+cls
+javac sales\LogoutServlet.java
+doskey/h
+doskey/history > cmd2

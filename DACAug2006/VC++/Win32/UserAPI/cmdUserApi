@@ -1,0 +1,50 @@
+winmaintest.exe
+winmaintest.exe Hello World
+cls
+notepad winmintest.c
+cl /MD winmintest.c
+cl /MD winmintest.c user32.lib
+cls
+cl /MD winmintest.c user32.lib
+cls
+copy winmintest.c winpainttest.c
+notepad winpainttest.c
+cl /MD winpainttest.c user32.lib gdi32.lib
+copy winpainttest.c winlooptest.c
+notepad winlooptest.c
+cl /MD winlooptest.c user32.lib gdi32.lib
+cls
+cl /MD winlooptest.c user32.lib gdi32.lib
+copy winlooptest.c winthreadtest.c
+notepad winthreadtest.c
+cl /MD winthreadtest.c user32.lib gdi32.lib
+start.
+doskey/h > cmdUserApi
+cls
+cl /MD mymaintest.c /link /entry:MyMain /subsystem:console
+cl
+cls
+dumpbin /headers mymaintest.exe
+cls
+notepad winmaintest.c
+cl /MD winmaintest.c
+cls
+dumpbin /headers winmaintest.exe
+cls
+dir
+cls
+notepad uithreadtest.c
+cl /MD uithreadtest.c
+cls
+cl /MD uithreadtest.c
+cls
+cl /MD uithreadtest.c user32.lib
+notepad postmsgtest.c
+cl /MD postmsgtest.c
+cls
+postmsgtest.exe 
+postmsgtest.exe 1492
+cls
+postmsgtest.exe 1492
+notepad winmaintest.c
+cl /MD winmaintest.c user32.lib

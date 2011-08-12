@@ -1,0 +1,50 @@
+cls
+java HoldingClient list 1005
+java BrokerMessageReceiver1 remove
+java HoldingClient list 1005
+java BrokerMessageBrowser
+doskey /h > cmd-SER.txt
+cls
+cd ..
+cls
+cd fbs-web\WEB-INF\classes
+cls
+md wwwtrade
+notepad wwwtrade\GetCompanyTag.java
+javac wwwtrade\GetCompanyTag.java
+cd ..
+cd fbs-ejb
+cls
+javac ..\fbs-web\WEB-INF\classes\wwwtrade\GetCompanyTag.java
+cls
+notepad ..\fbs-web\WEB-INF\classes\wwwtrade\TraderBean.java
+javac ..\fbs-web\WEB-INF\classes\wwwtrade\TraderBean.java
+java HoldingClient list 1003
+java HoldingClient list 1005
+java HoldingClient list 1003
+java HoldingClient list 1005
+java BrokerMessageReceiver1 remove
+java AccountClient list 1004
+java HoldingClient list 1005
+java HoldingClient list 1004
+java HoldingClient list 1005
+java BrokerMessageBrowser
+cls
+cd ..
+cls
+cd EJB-JMS
+cls
+cd fbs-ejb
+cls
+notepad ..\fbs-web\WEB-INF\classes\wwwtrade\InvestmentInfo.java
+javac ..\fbs-web\WEB-INF\classes\wwwtrade\InvestmentInfo.java
+cls
+cd ..
+cd fbs-web\WEB-INF
+cls
+\orion\bin\adminclient.bat -l http://localhost:8000/fbs/servlet/AxisServlet deploy.wsdd
+dir 
+cls
+\orion\bin\adminclient.bat -l http://localhost:8000/fbs/servlet/AxisServlet deploy.wsdd
+cd ..
+cd fbs-ejb

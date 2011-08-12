@@ -1,0 +1,49 @@
+java SysPropsTest
+java -Djava.security.manager SysPropsTest
+cls
+notepad my.policy
+java -Djava.security.manager -Djava.security.policy=my.policy SysPropsTest
+copy my.policy "C:\Documents and Settings\efaculty1\.java.policy"
+java -Djava.security.manager SysPropsTest
+copy my.policy "C:\Documents and Settings\efaculty1\.java.policy"
+y
+java -Djava.security.manager SysPropsTest
+copy my.policy "C:\Documents and Settings\efaculty1\.java.policy"
+y
+java -Djava.security.manager SysPropsTest
+cls
+java TreeSetTest2
+cls
+copy HashtableTest.java HashMapTest.java
+notepad HashMapTest.java
+javac HashMapTest.java
+java HashMapTest
+java HashMapTest john
+java HashMapTest jim
+javac HashMapTest.java
+java HashMapTest
+copy HashMapTest.java TreeMapTest.java
+notepad TreeMapTest.java
+cls
+javac TreeMapTest.java
+java TreeMapTest
+cls
+javap java.util.Collections
+cls
+notepad SysPropsTest.java
+javac SysPropsTest.java
+cls
+java SysPropsTest -all
+javac SysPropsTest.java
+java SysPropsTest -all
+javac SysPropsTest.java
+java SysPropsTest
+cls
+java SysPropsTest
+java -Dmy.name=Jack SysPropsTest
+java -Dmy.name=Jack SysPropsTest -all
+java -Dmy.name=Jack -Dmy.age=23 SysPropsTest -all
+cls
+java -Dos.name=Linux SysPropsTest
+cls
+java -Djava.security.manager SysPropsTest

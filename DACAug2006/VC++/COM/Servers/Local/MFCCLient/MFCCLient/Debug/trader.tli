@@ -1,0 +1,54 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (0ba07120).
+//
+// c:\vc++\com\servers\local\mfcclient\mfcclient\debug\trader.tli
+//
+// Wrapper implementations for Win32 type library C:\VC++\COM\Servers\Local\trader.exe
+// compiler-generated file created 12/01/06 at 03:16:50 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IInventory wrapper method implementations
+//
+
+inline HRESULT IInventory::Buy ( int quantity, float rate ) {
+    HRESULT _hr = raw_Buy(quantity, rate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IInventory::Sell ( int quantity, float rate ) {
+    HRESULT _hr = raw_Sell(quantity, rate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline int IInventory::GetStock ( ) {
+    int _result = 0;
+    HRESULT _hr = raw_GetStock(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IAccount wrapper method implementations
+//
+
+inline HRESULT IAccount::Credit ( double amount ) {
+    HRESULT _hr = raw_Credit(amount);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAccount::Debit ( double amount ) {
+    HRESULT _hr = raw_Debit(amount);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline double IAccount::GetBalance ( ) {
+    double _result = 0;
+    HRESULT _hr = raw_GetBalance(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}

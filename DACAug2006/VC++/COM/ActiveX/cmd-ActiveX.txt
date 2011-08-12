@@ -1,0 +1,50 @@
+regsvr32 trader.dll
+cl /MD /LD trader.cpp oleaut32.lib advapi32.lib trader_i.c comexp.def trader.RES
+notepad automationclient.vbs
+automationclient.vbs 50
+notepad client.cpp
+cl /MD /EHsc client.cpp 
+client.exe
+doskey /h > cmd-ActiveX.txt
+cls
+dir
+cls
+cd ..
+cls
+dir
+cd ..
+cls
+dir
+cd Servers
+cls
+dir
+cd ..
+cls
+md ActiveX
+cd ActiveX
+cls
+dir
+copy ..\Servers\InProcess\trader.idl .
+copy ..\Servers\InProcess\trader.cpp
+cls
+copy ..\Servers\InProcess\trader.rc
+copy ..\Servers\InProcess\comexp.def
+cls
+dir
+notepad trader.idl
+uuidgen /c
+midl trader.idl
+dir
+notepad trader.cpp
+cl /c trader.cpp
+midl trader.idl
+cls
+cl /c trader.cpp
+cls
+cl /c trader.cpp
+cl /MD /LD trader.cpp oleaut32.lib advapi32.lib trader_i.c comexp.def trader.RES
+rc trader.rc
+cl /MD /LD trader.cpp oleaut32.lib advapi32.lib trader_i.c comexp.def trader.RES
+regsvr32 trader.dll
+regedit
+regsvr32 /u trader.dll

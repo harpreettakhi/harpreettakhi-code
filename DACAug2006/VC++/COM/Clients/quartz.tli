@@ -1,0 +1,971 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (433793dc).
+//
+// c:\vc++\com\clients\quartz.tli
+//
+// Wrapper implementations for Win32 type library c:\winnt\system32\quartz.dll
+// compiler-generated file created 11/30/06 at 02:55:24 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IAMCollection wrapper method implementations
+//
+
+inline long IAMCollection::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IAMCollection::Item ( long lItem, IUnknown * * ppUnk ) {
+    HRESULT _hr = raw_Item(lItem, ppUnk);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IUnknownPtr IAMCollection::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface IMediaControl wrapper method implementations
+//
+
+inline HRESULT IMediaControl::Play ( ) {
+    HRESULT _hr = raw_Play();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaControl::Pause ( ) {
+    HRESULT _hr = raw_Pause();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaControl::Stop ( ) {
+    HRESULT _hr = raw_Stop();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaControl::GetState ( long msTimeout, long * pfs ) {
+    HRESULT _hr = raw_GetState(msTimeout, pfs);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaControl::RenderFile ( _bstr_t strFilename ) {
+    HRESULT _hr = raw_RenderFile(strFilename);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaControl::AddSourceFilter ( _bstr_t strFilename, IDispatch * * ppUnk ) {
+    HRESULT _hr = raw_AddSourceFilter(strFilename, ppUnk);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IDispatchPtr IMediaControl::GetFilterCollection ( ) {
+    IDispatch * _result = 0;
+    HRESULT _hr = get_FilterCollection(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IMediaControl::GetRegFilterCollection ( ) {
+    IDispatch * _result = 0;
+    HRESULT _hr = get_RegFilterCollection(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT IMediaControl::StopWhenReady ( ) {
+    HRESULT _hr = raw_StopWhenReady();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IMediaEvent wrapper method implementations
+//
+
+inline HRESULT IMediaEvent::GetEventHandle ( LONG_PTR * hEvent ) {
+    HRESULT _hr = raw_GetEventHandle(hEvent);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaEvent::GetEvent ( long * lEventCode, LONG_PTR * lParam1, LONG_PTR * lParam2, long msTimeout ) {
+    HRESULT _hr = raw_GetEvent(lEventCode, lParam1, lParam2, msTimeout);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaEvent::WaitForCompletion ( long msTimeout, long * pEvCode ) {
+    HRESULT _hr = raw_WaitForCompletion(msTimeout, pEvCode);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaEvent::CancelDefaultHandling ( long lEvCode ) {
+    HRESULT _hr = raw_CancelDefaultHandling(lEvCode);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaEvent::RestoreDefaultHandling ( long lEvCode ) {
+    HRESULT _hr = raw_RestoreDefaultHandling(lEvCode);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaEvent::FreeEventParams ( long lEvCode, LONG_PTR lParam1, LONG_PTR lParam2 ) {
+    HRESULT _hr = raw_FreeEventParams(lEvCode, lParam1, lParam2);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IMediaEventEx wrapper method implementations
+//
+
+inline HRESULT IMediaEventEx::SetNotifyWindow ( LONG_PTR hwnd, long lMsg, LONG_PTR lInstanceData ) {
+    HRESULT _hr = raw_SetNotifyWindow(hwnd, lMsg, lInstanceData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaEventEx::SetNotifyFlags ( long lNoNotifyFlags ) {
+    HRESULT _hr = raw_SetNotifyFlags(lNoNotifyFlags);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IMediaEventEx::GetNotifyFlags ( long * lplNoNotifyFlags ) {
+    HRESULT _hr = raw_GetNotifyFlags(lplNoNotifyFlags);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IMediaPosition wrapper method implementations
+//
+
+inline double IMediaPosition::GetDuration ( ) {
+    double _result = 0;
+    HRESULT _hr = get_Duration(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IMediaPosition::PutCurrentPosition ( double pllTime ) {
+    HRESULT _hr = put_CurrentPosition(pllTime);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IMediaPosition::GetCurrentPosition ( ) {
+    double _result = 0;
+    HRESULT _hr = get_CurrentPosition(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline double IMediaPosition::GetStopTime ( ) {
+    double _result = 0;
+    HRESULT _hr = get_StopTime(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IMediaPosition::PutStopTime ( double pllTime ) {
+    HRESULT _hr = put_StopTime(pllTime);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IMediaPosition::GetPrerollTime ( ) {
+    double _result = 0;
+    HRESULT _hr = get_PrerollTime(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IMediaPosition::PutPrerollTime ( double pllTime ) {
+    HRESULT _hr = put_PrerollTime(pllTime);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline void IMediaPosition::PutRate ( double pdRate ) {
+    HRESULT _hr = put_Rate(pdRate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IMediaPosition::GetRate ( ) {
+    double _result = 0;
+    HRESULT _hr = get_Rate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IMediaPosition::CanSeekForward ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_CanSeekForward(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IMediaPosition::CanSeekBackward ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_CanSeekBackward(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IBasicAudio wrapper method implementations
+//
+
+inline void IBasicAudio::PutVolume ( long plVolume ) {
+    HRESULT _hr = put_Volume(plVolume);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicAudio::GetVolume ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Volume(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicAudio::PutBalance ( long plBalance ) {
+    HRESULT _hr = put_Balance(plBalance);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicAudio::GetBalance ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Balance(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IVideoWindow wrapper method implementations
+//
+
+inline void IVideoWindow::PutCaption ( _bstr_t strCaption ) {
+    HRESULT _hr = put_Caption(strCaption);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IVideoWindow::GetCaption ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Caption(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IVideoWindow::PutWindowStyle ( long WindowStyle ) {
+    HRESULT _hr = put_WindowStyle(WindowStyle);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetWindowStyle ( ) {
+    long _result = 0;
+    HRESULT _hr = get_WindowStyle(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutWindowStyleEx ( long WindowStyleEx ) {
+    HRESULT _hr = put_WindowStyleEx(WindowStyleEx);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetWindowStyleEx ( ) {
+    long _result = 0;
+    HRESULT _hr = get_WindowStyleEx(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutAutoShow ( long AutoShow ) {
+    HRESULT _hr = put_AutoShow(AutoShow);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetAutoShow ( ) {
+    long _result = 0;
+    HRESULT _hr = get_AutoShow(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutWindowState ( long WindowState ) {
+    HRESULT _hr = put_WindowState(WindowState);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetWindowState ( ) {
+    long _result = 0;
+    HRESULT _hr = get_WindowState(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutBackgroundPalette ( long pBackgroundPalette ) {
+    HRESULT _hr = put_BackgroundPalette(pBackgroundPalette);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetBackgroundPalette ( ) {
+    long _result = 0;
+    HRESULT _hr = get_BackgroundPalette(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutVisible ( long pVisible ) {
+    HRESULT _hr = put_Visible(pVisible);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetVisible ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Visible(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutLeft ( long pLeft ) {
+    HRESULT _hr = put_Left(pLeft);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetLeft ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Left(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutWidth ( long pWidth ) {
+    HRESULT _hr = put_Width(pWidth);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetWidth ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Width(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutTop ( long pTop ) {
+    HRESULT _hr = put_Top(pTop);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetTop ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Top(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutHeight ( long pHeight ) {
+    HRESULT _hr = put_Height(pHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetHeight ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Height(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutOwner ( LONG_PTR Owner ) {
+    HRESULT _hr = put_Owner(Owner);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline LONG_PTR IVideoWindow::GetOwner ( ) {
+    LONG_PTR _result;
+    HRESULT _hr = get_Owner(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutMessageDrain ( LONG_PTR Drain ) {
+    HRESULT _hr = put_MessageDrain(Drain);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline LONG_PTR IVideoWindow::GetMessageDrain ( ) {
+    LONG_PTR _result;
+    HRESULT _hr = get_MessageDrain(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IVideoWindow::GetBorderColor ( ) {
+    long _result = 0;
+    HRESULT _hr = get_BorderColor(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutBorderColor ( long Color ) {
+    HRESULT _hr = put_BorderColor(Color);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IVideoWindow::GetFullScreenMode ( ) {
+    long _result = 0;
+    HRESULT _hr = get_FullScreenMode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IVideoWindow::PutFullScreenMode ( long FullScreenMode ) {
+    HRESULT _hr = put_FullScreenMode(FullScreenMode);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT IVideoWindow::SetWindowForeground ( long Focus ) {
+    HRESULT _hr = raw_SetWindowForeground(Focus);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IVideoWindow::NotifyOwnerMessage ( LONG_PTR hwnd, long uMsg, LONG_PTR wParam, LONG_PTR lParam ) {
+    HRESULT _hr = raw_NotifyOwnerMessage(hwnd, uMsg, wParam, lParam);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IVideoWindow::SetWindowPosition ( long Left, long Top, long Width, long Height ) {
+    HRESULT _hr = raw_SetWindowPosition(Left, Top, Width, Height);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IVideoWindow::GetWindowPosition ( long * pLeft, long * pTop, long * pWidth, long * pHeight ) {
+    HRESULT _hr = raw_GetWindowPosition(pLeft, pTop, pWidth, pHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IVideoWindow::GetMinIdealImageSize ( long * pWidth, long * pHeight ) {
+    HRESULT _hr = raw_GetMinIdealImageSize(pWidth, pHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IVideoWindow::GetMaxIdealImageSize ( long * pWidth, long * pHeight ) {
+    HRESULT _hr = raw_GetMaxIdealImageSize(pWidth, pHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IVideoWindow::GetRestorePosition ( long * pLeft, long * pTop, long * pWidth, long * pHeight ) {
+    HRESULT _hr = raw_GetRestorePosition(pLeft, pTop, pWidth, pHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IVideoWindow::HideCursor ( long HideCursor ) {
+    HRESULT _hr = raw_HideCursor(HideCursor);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IVideoWindow::IsCursorHidden ( long * CursorHidden ) {
+    HRESULT _hr = raw_IsCursorHidden(CursorHidden);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IBasicVideo wrapper method implementations
+//
+
+inline double IBasicVideo::GetAvgTimePerFrame ( ) {
+    double _result = 0;
+    HRESULT _hr = get_AvgTimePerFrame(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBasicVideo::GetBitRate ( ) {
+    long _result = 0;
+    HRESULT _hr = get_BitRate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBasicVideo::GetBitErrorRate ( ) {
+    long _result = 0;
+    HRESULT _hr = get_BitErrorRate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBasicVideo::GetVideoWidth ( ) {
+    long _result = 0;
+    HRESULT _hr = get_VideoWidth(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBasicVideo::GetVideoHeight ( ) {
+    long _result = 0;
+    HRESULT _hr = get_VideoHeight(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicVideo::PutSourceLeft ( long pSourceLeft ) {
+    HRESULT _hr = put_SourceLeft(pSourceLeft);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicVideo::GetSourceLeft ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SourceLeft(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicVideo::PutSourceWidth ( long pSourceWidth ) {
+    HRESULT _hr = put_SourceWidth(pSourceWidth);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicVideo::GetSourceWidth ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SourceWidth(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicVideo::PutSourceTop ( long pSourceTop ) {
+    HRESULT _hr = put_SourceTop(pSourceTop);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicVideo::GetSourceTop ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SourceTop(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicVideo::PutSourceHeight ( long pSourceHeight ) {
+    HRESULT _hr = put_SourceHeight(pSourceHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicVideo::GetSourceHeight ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SourceHeight(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicVideo::PutDestinationLeft ( long pDestinationLeft ) {
+    HRESULT _hr = put_DestinationLeft(pDestinationLeft);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicVideo::GetDestinationLeft ( ) {
+    long _result = 0;
+    HRESULT _hr = get_DestinationLeft(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicVideo::PutDestinationWidth ( long pDestinationWidth ) {
+    HRESULT _hr = put_DestinationWidth(pDestinationWidth);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicVideo::GetDestinationWidth ( ) {
+    long _result = 0;
+    HRESULT _hr = get_DestinationWidth(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicVideo::PutDestinationTop ( long pDestinationTop ) {
+    HRESULT _hr = put_DestinationTop(pDestinationTop);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicVideo::GetDestinationTop ( ) {
+    long _result = 0;
+    HRESULT _hr = get_DestinationTop(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IBasicVideo::PutDestinationHeight ( long pDestinationHeight ) {
+    HRESULT _hr = put_DestinationHeight(pDestinationHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IBasicVideo::GetDestinationHeight ( ) {
+    long _result = 0;
+    HRESULT _hr = get_DestinationHeight(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IBasicVideo::SetSourcePosition ( long Left, long Top, long Width, long Height ) {
+    HRESULT _hr = raw_SetSourcePosition(Left, Top, Width, Height);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::GetSourcePosition ( long * pLeft, long * pTop, long * pWidth, long * pHeight ) {
+    HRESULT _hr = raw_GetSourcePosition(pLeft, pTop, pWidth, pHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::SetDefaultSourcePosition ( ) {
+    HRESULT _hr = raw_SetDefaultSourcePosition();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::SetDestinationPosition ( long Left, long Top, long Width, long Height ) {
+    HRESULT _hr = raw_SetDestinationPosition(Left, Top, Width, Height);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::GetDestinationPosition ( long * pLeft, long * pTop, long * pWidth, long * pHeight ) {
+    HRESULT _hr = raw_GetDestinationPosition(pLeft, pTop, pWidth, pHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::SetDefaultDestinationPosition ( ) {
+    HRESULT _hr = raw_SetDefaultDestinationPosition();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::GetVideoSize ( long * pWidth, long * pHeight ) {
+    HRESULT _hr = raw_GetVideoSize(pWidth, pHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::GetVideoPaletteEntries ( long StartIndex, long Entries, long * pRetrieved, long * pPalette ) {
+    HRESULT _hr = raw_GetVideoPaletteEntries(StartIndex, Entries, pRetrieved, pPalette);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::GetCurrentImage ( long * pBufferSize, long * pDIBImage ) {
+    HRESULT _hr = raw_GetCurrentImage(pBufferSize, pDIBImage);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::IsUsingDefaultSource ( ) {
+    HRESULT _hr = raw_IsUsingDefaultSource();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IBasicVideo::IsUsingDefaultDestination ( ) {
+    HRESULT _hr = raw_IsUsingDefaultDestination();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IBasicVideo2 wrapper method implementations
+//
+
+inline HRESULT IBasicVideo2::GetPreferredAspectRatio ( long * plAspectX, long * plAspectY ) {
+    HRESULT _hr = raw_GetPreferredAspectRatio(plAspectX, plAspectY);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IDeferredCommand wrapper method implementations
+//
+
+inline HRESULT IDeferredCommand::Cancel ( ) {
+    HRESULT _hr = raw_Cancel();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IDeferredCommand::Confidence ( long * pConfidence ) {
+    HRESULT _hr = raw_Confidence(pConfidence);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IDeferredCommand::Postpone ( double newtime ) {
+    HRESULT _hr = raw_Postpone(newtime);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IDeferredCommand::GetHResult ( HRESULT * phrResult ) {
+    HRESULT _hr = raw_GetHResult(phrResult);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IQueueCommand wrapper method implementations
+//
+
+inline HRESULT IQueueCommand::InvokeAtStreamTime ( struct IDeferredCommand * * pCmd, double time, GUID * iid, long dispidMethod, short wFlags, long cArgs, VARIANT * pDispParams, VARIANT * pvarResult, short * puArgErr ) {
+    HRESULT _hr = raw_InvokeAtStreamTime(pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IQueueCommand::InvokeAtPresentationTime ( struct IDeferredCommand * * pCmd, double time, GUID * iid, long dispidMethod, short wFlags, long cArgs, VARIANT * pDispParams, VARIANT * pvarResult, short * puArgErr ) {
+    HRESULT _hr = raw_InvokeAtPresentationTime(pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IFilterInfo wrapper method implementations
+//
+
+inline HRESULT IFilterInfo::FindPin ( _bstr_t strPinID, IDispatch * * ppUnk ) {
+    HRESULT _hr = raw_FindPin(strPinID, ppUnk);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IFilterInfo::GetName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IFilterInfo::GetVendorInfo ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_VendorInfo(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IUnknownPtr IFilterInfo::GetFilter ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get_Filter(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline IDispatchPtr IFilterInfo::GetPins ( ) {
+    IDispatch * _result = 0;
+    HRESULT _hr = get_Pins(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline long IFilterInfo::GetIsFileSource ( ) {
+    long _result = 0;
+    HRESULT _hr = get_IsFileSource(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IFilterInfo::GetFilename ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Filename(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IFilterInfo::PutFilename ( _bstr_t pstrFilename ) {
+    HRESULT _hr = put_Filename(pstrFilename);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IRegFilterInfo wrapper method implementations
+//
+
+inline _bstr_t IRegFilterInfo::GetName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IRegFilterInfo::Filter ( IDispatch * * ppUnk ) {
+    HRESULT _hr = raw_Filter(ppUnk);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IMediaTypeInfo wrapper method implementations
+//
+
+inline _bstr_t IMediaTypeInfo::GetType ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Type(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IMediaTypeInfo::GetSubtype ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Subtype(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface IPinInfo wrapper method implementations
+//
+
+inline IUnknownPtr IPinInfo::GetPin ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get_Pin(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline IDispatchPtr IPinInfo::GetConnectedTo ( ) {
+    IDispatch * _result = 0;
+    HRESULT _hr = get_ConnectedTo(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IPinInfo::GetConnectionMediaType ( ) {
+    IDispatch * _result = 0;
+    HRESULT _hr = get_ConnectionMediaType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline IDispatchPtr IPinInfo::GetFilterInfo ( ) {
+    IDispatch * _result = 0;
+    HRESULT _hr = get_FilterInfo(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline _bstr_t IPinInfo::GetName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IPinInfo::GetDirection ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Direction(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IPinInfo::GetPinID ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_PinID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IDispatchPtr IPinInfo::GetMediaTypes ( ) {
+    IDispatch * _result = 0;
+    HRESULT _hr = get_MediaTypes(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT IPinInfo::Connect ( IUnknown * pPin ) {
+    HRESULT _hr = raw_Connect(pPin);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IPinInfo::ConnectDirect ( IUnknown * pPin ) {
+    HRESULT _hr = raw_ConnectDirect(pPin);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IPinInfo::ConnectWithType ( IUnknown * pPin, IDispatch * pMediaType ) {
+    HRESULT _hr = raw_ConnectWithType(pPin, pMediaType);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IPinInfo::Disconnect ( ) {
+    HRESULT _hr = raw_Disconnect();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IPinInfo::Render ( ) {
+    HRESULT _hr = raw_Render();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IAMStats wrapper method implementations
+//
+
+inline HRESULT IAMStats::Reset ( ) {
+    HRESULT _hr = raw_Reset();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IAMStats::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IAMStats::GetValueByIndex ( long lIndex, BSTR * szName, long * lCount, double * dLast, double * dAverage, double * dStdDev, double * dMin, double * dMax ) {
+    HRESULT _hr = raw_GetValueByIndex(lIndex, szName, lCount, dLast, dAverage, dStdDev, dMin, dMax);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAMStats::GetValueByName ( _bstr_t szName, long * lIndex, long * lCount, double * dLast, double * dAverage, double * dStdDev, double * dMin, double * dMax ) {
+    HRESULT _hr = raw_GetValueByName(szName, lIndex, lCount, dLast, dAverage, dStdDev, dMin, dMax);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAMStats::GetIndex ( _bstr_t szName, long lCreate, long * plIndex ) {
+    HRESULT _hr = raw_GetIndex(szName, lCreate, plIndex);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAMStats::AddValue ( long lIndex, double dValue ) {
+    HRESULT _hr = raw_AddValue(lIndex, dValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}

@@ -1,0 +1,7 @@
+extern __declspec(dllimport) int __stdcall GreatestDivisor(int, int);
+extern __declspec(dllimport) int __stdcall LeastMultiple(int, int);
+
+int wmain()
+{
+	return GreatestDivisor(6, 9) + LeastMultiple(4, 6);
+}

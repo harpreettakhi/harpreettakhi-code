@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+ <!-- Generated 12/02/06 by Microsoft SOAP Toolkit WSDL File Generator, Version 3.00.1325.0 --> 
+  <servicemapping name='LoanService' xmlns:dime='http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/'>
+  <service name='LoanService'>
+    <using PROGID='ACMEFinance.PersonalLoan' cachable='0' ID='PersonalLoanObject' />
+    <port name='PersonalLoanSoapPort'>
+      <operation name='GetInterestRate'>
+        <execute uses='PersonalLoanObject' method='GetInterestRate' dispID='1610743808'>
+          <parameter callIndex='-1' name='retval' elementName='Result' />
+          <parameter callIndex='1' name='amount' elementName='amount' />
+          <parameter callIndex='2' name='period' elementName='period' />
+        </execute>
+      </operation>
+      <operation name='GetMonthlyInstallment'>
+        <execute uses='PersonalLoanObject' method='GetMonthlyInstallment' dispID='1610743809'>
+          <parameter callIndex='-1' name='retval' elementName='Result' />
+          <parameter callIndex='1' name='amount' elementName='amount' />
+          <parameter callIndex='2' name='period' elementName='period' />
+        </execute>
+      </operation>
+    </port>
+  </service>
+</servicemapping>
+ 

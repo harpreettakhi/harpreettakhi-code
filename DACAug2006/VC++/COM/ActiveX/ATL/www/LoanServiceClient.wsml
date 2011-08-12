@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+ <!-- Generated 12/02/06 by Microsoft SOAP Toolkit WSDL File Generator, Version 3.00.1325.0 --> 
+  <servicemapping name='LoanService' xmlns:dime='http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/'>
+  <service name='LoanService'>
+  </service>
+</servicemapping>
+ 

@@ -1,0 +1,49 @@
+notepad finance\HomeLoan.java
+javac finance\*.java
+copy DynamicEMICalc.java EMICalc.java
+notepad EMICalc.java
+javac EMICalc.java
+java EMICalc 300000 5 finance.EducationLoan
+java EMICalc 300000 5 finance.HomeLoan
+java EMICalc 300000 5 finance.PersonalLoan
+java EMICalc 300000 5 finance.BusinessLoan
+cls
+copy ..\Streams\StreamTest.java Encryptor.java
+notepad Encryptor.java
+javac Encryptor.java
+notepad Hello.java
+javac Hello.java
+cls
+java Hello
+java Hello Jack Jill
+java Encryptor Hello.class Hello.eclass solaris
+dir Hello*.*
+java Hello
+del Hello.class
+cls
+java Hello
+copy Hello.eclass Hello.class
+java Hello
+del Hello.class
+cls
+notepad RunEClass.java
+javac RunEClass.java
+cls
+javac RunEClass.java
+java RunEClass Hello solaris Jack Jill
+javac Hello.java
+java RunEClass Hello solaris Jack Jill
+notepad Hello.java
+javac Hello.java
+java Encryptor Hello.class Hello.eclass solaris
+del Hello.class
+java RunEClass Hello solaris Jack Jill
+java RunEClass Hello windows Jack Jill
+notepad RunEClass.java
+javac RunEClass.java
+java RunEClass Hello solaris Jack Jill
+java RunEClass Hello solaris
+javac RunEClass.java
+java RunEClass Hello solaris Jack Jill
+java RunEClass Hello solaris
+notepad finance\EducationLoan.java

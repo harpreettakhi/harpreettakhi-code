@@ -1,0 +1,13 @@
+<WSDLGenConfig WSDLGenVersion="3.0" serviceName="LoanService" COMObjectPath="C:\VC++\COM\ActiveX\ATL\finance.dll" listenerURI="http://prithvi/atlcom/" listenerType="ASP" XSDSchemaNS="2001" definitionsTNS="http://prithvi/atlcom/LoanService/wsdl/" schemaTNS="http://prithvi/atlcom/LoanService/type/" soapBodyNS="http://prithvi/atlcom/LoanService/message/" soapActionURI="http://prithvi/atlcom/LoanService/action/" characterSet="UTF-8" outputPath="C:\VC++\COM\ActiveX\ATL\www" >
+   <selectedInterfaces>
+      <interface name="PersonalLoan">
+         <selectedMethods>
+            <method name="GetMonthlyInstallment">
+            </method>
+            <method name="GetInterestRate">
+            </method>
+         </selectedMethods>
+      </interface>
+   </selectedInterfaces>
+</WSDLGenConfig>
+

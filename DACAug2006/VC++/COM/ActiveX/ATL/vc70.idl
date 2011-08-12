@@ -1,0 +1,41 @@
+import "docobj.idl";
+
+[
+	uuid(2B74B872-4882-4C05-9B9A-0BDE46655EA6),
+	dual
+] 
+#line 9 "c:\\vc++\\com\\activex\\atl\\finance.cpp"
+interface ISimpleLoan : IDispatch {
+	HRESULT  GetInterestRate([in] double amount, [in] int period, [out,retval] float *pResult);
+	HRESULT  GetMonthlyInstallment([in] double amount, [in] int period, [out,retval] double *pResult);
+};
+
+[
+	uuid(BA435EFE-CAC6-4333-9A1A-80EBF20947B9),
+	object
+] 
+#line 16 "c:\\vc++\\com\\activex\\atl\\finance.cpp"
+interface ILoanLimits : IUnknown {
+	HRESULT  GetMaximumAmount([out,retval] double *pResult);
+	HRESULT  GetMaximumPeriod([out,retval] int *pResult);
+};
+
+
+[ version(1.0), uuid(FE79618E-5E23-4904-AD0A-500E6D783CA3), helpstring("ACME Finance Objects") ]
+library ACMEFinance
+{
+	importlib("stdole2.tlb");
+	importlib("olepro32.dll");
+
+	[
+		version(1.0),
+		uuid(D9E3FCF0-460D-4056-933C-0E958444EB30)
+	] 
+#line 24 "c:\\vc++\\com\\activex\\atl\\finance.cpp"
+	coclass PersonalLoan {
+		interface ISimpleLoan;
+		interface ILoanLimits;
+	};
+
+}
+

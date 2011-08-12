@@ -1,0 +1,39 @@
+cls
+dir
+md EJB-JMS
+cls
+cd EJB-JMS
+cls
+md META-INF
+md fbs-ejb
+md fbs-web
+cd fbs-ejb
+md META-INF
+cd ..
+cd fbs-web
+md WEB-INF
+cd WEB-INF
+cls
+md classes
+cd ..
+tree
+\orion\bin\setenv.bat
+javap javax.ejb.EJBObject
+javap javax.ejb.EJBLocalObject
+cd fbs-ejb
+cls
+md trading
+cls
+notepad trading\Account.java
+javac trading\Account.java
+notepad trading\AccountLocal.java
+javac trading\AccountLocal.java
+notepad trading\AccountHome.java
+notepad trading\AccountLocalHome.java
+javac trading\AccountLocalHome.java
+javac trading\AccountHome.java
+javap javax.ejb.EntityBean
+cls
+notepad trading\AccountEJB.java
+javac trading\AccountEJB.java
+doskey /h > cmdEJB.txt

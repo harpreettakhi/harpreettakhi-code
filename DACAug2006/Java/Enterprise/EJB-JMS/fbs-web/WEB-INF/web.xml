@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/j2ee/dtds/web-app_2_3.dtd">
+
+<web-app>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+<!--
+    <servlet>
+        <servlet-name>name</servlet-name>
+        <servlet-class>ServletClaa</servlet-class>        
+        <init-param>
+            <param-name>paramName</param-name>
+            <param-value>paramValue</param-value>
+        </init-param>    
+    </servlet>
+-->
+
+
+<!--
+    <servlet-mapping>
+        <servlet-name>name</servlet-name>
+        <url-pattern>/*.*</url-pattern>
+    </servlet-mapping>
+-->
+
+    <ejb-local-ref>
+        <ejb-ref-name>ejb/Company</ejb-ref-name>
+        <local-home>trading.CompanyLocalHome</local-home>
+        <local>trading.CompanyLocal</local>
+        <ejb-ref-type>Entity</ejb-ref-type>
+    </ejb-local-ref>
+
+    <ejb-local-ref>
+        <ejb-ref-name>ejb/Broker</ejb-ref-name>
+        <local-home>trading.BrokerLocalHome</local-home>
+        <local>trading.BrokerLocal</local>
+        <ejb-ref-type>Session</ejb-ref-type>
+    </ejb-local-ref>
+
+</web-app>
+
+
+
+
+

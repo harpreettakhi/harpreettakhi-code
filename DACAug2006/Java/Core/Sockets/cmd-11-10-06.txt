@@ -1,0 +1,49 @@
+start java UDPServerTest
+notepad UDPClientTest.java
+java TCPClientTest labasst3 SUNW
+java TCPClientTest SUNW labasst3
+cls
+javac UDPClientTest.java
+java UDPClientTest IBM prithvi
+java UDPClientTest ORCL prithvi
+java UDPClientTest HP prithvi
+java UDPClientTest ORCL labasst3
+javac UDPClientTest.java
+java UDPClientTest IBM prithvi
+java UDPClientTest ORCL labasst3
+cls
+notepad UDPMulticaster.java
+ren UDPMulticaster.java UDPPublisherTest.java 
+notepad UDPPublisherTest.java
+javac UDPPublisherTest.java
+start java UDPPublisherTest
+notepad UDPSubscriberTest.java
+javac UDPSubscriberTest.java
+java UDPSubscriberTest
+notepad ConcurrentTCPServerTest.java
+javac ConcurrentTCPServerTest.java
+cls
+javac ConcurrentTCPServerTest.java
+start java ConcurrentTCPServerTest
+telnet prithvi 2055
+start java ConcurrentTCPServerTest
+notepad TCPClientTest.java
+javac TCPClientTest.java
+java TCPClientTest IBM
+javac TCPClientTest.java
+cls
+java TCPClientTest IBM prithvi
+java TCPClientTest SUNW prithvi
+java TCPClientTest INT prithvi
+cls
+notepad WebClientTest.java
+javap java.net.URL
+cls
+javac WebClientTest.java
+java WebClientTest IBM
+java WebClientTest MSFT
+java WebClientTest INTL
+cls
+notepad SimpleTCPServerTest.java
+notepad UDPServerTest.java
+javac UDPServerTest.java

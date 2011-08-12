@@ -1,0 +1,50 @@
+processtest1.exe
+cls
+cl processtest1.c
+cls
+processtest1.exe
+cls
+notepad processtest2.c
+cl processtest2.c
+cls
+processtest2.exe
+cls
+cl processtest2.c
+cls
+processtest2.exe
+cls
+copy processtest2.c processtest3.c
+notepad processtest3.c
+cl processtest3.c
+cls
+processtest3.exe
+doskey /h > cmdthread.txt
+cls
+semaphoretest.exe
+cls
+notepad workerthreadtest.c
+cl /MT workerthreadtest.c
+cls
+cl /MT workerthreadtest.c
+cls
+workerthreadtest.exe
+cls
+cl /MT workerthreadtest.c
+cls
+workerthreadtest.exe
+cls
+notepad fibretest.c
+ren fibretest.c fibertest.c
+notepad fibertest.c
+cl /MT fibertest.c
+fibertest.exe
+cls
+notepad processtest1.c
+cl fibertest.c
+cls
+fibertest.exe
+cls
+set
+cls
+cl processtest1.c
+cls

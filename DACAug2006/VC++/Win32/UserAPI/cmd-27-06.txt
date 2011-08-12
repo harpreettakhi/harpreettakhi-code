@@ -1,0 +1,39 @@
+cls
+cd UserAPI
+cls
+dir *.c
+copy winmintest.c winctrltest.c
+notepad winctrltest.c
+cls
+cl /MD winctrltest.c
+cls
+cl /MD winctrltest.c
+cls
+cl /MD winctrltest.c
+cls
+copy winctrltest.c winmenutest.c
+notepad winmenutest.c
+cl /MD winmenutest.c
+csl
+cls
+copy winmenutest.c winrestest.c
+notepad winrestest.c
+notepad winrestest.h
+notepad winrestest_en.rc
+rc winrestest_en.rc
+dir winres*.*
+cl /MD winrestest.c winrestest_en.RES
+cls
+cl /MD winrestest.c winrestest_en.RES
+dumpbin winrestest.exe
+rc winrestest_en.rc
+start winrestest_en.RES
+rc winrestest_en.rc
+start winrestest_en.RES
+cl /MD winrestest.c winrestest_en.RES
+cs
+cls
+copy winmintest.c winsubclstest.c
+notepad winsubclstest.c
+cl /MD winsubclstest.c user32.lib
+doskey /h > cmd-27-06.txt

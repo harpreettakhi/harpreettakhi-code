@@ -1,0 +1,14 @@
+cls
+cd Enterprise\Servlet-JSP\WEB-INF\classes
+notepad WelcomeServlet.java
+javac WelcomeServlet.java
+cls
+\orion\bin\setenv.bat
+javac WelcomeServlet.java
+cls
+javac WelcomeServlet.java
+copy WelcomeServlet.java StateServlet.java
+notepad StateServlet.java
+javac StateServlet.java
+cls
+doskey /history > cmd.txt
